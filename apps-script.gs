@@ -3,14 +3,18 @@
  * Implantado como App da Web (Executar como: Eu | Acesso: Qualquer pessoa).
  * A URL /exec vai em CONFIG.planilha no index.html.
  */
-const PLANILHA_ID = '1Z3ZiFKirWHvZ6PREbwf3VHUYUnww1GwPuMUBJmLWEt8';
+// cada quiz manda o parâmetro s; sem s = PMERJ
+const PLANILHAS = {
+  pmerj: '1Z3ZiFKirWHvZ6PREbwf3VHUYUnww1GwPuMUBJmLWEt8',
+  angra: '1zxyTcQ31rs8s3tPb5I6CxGu_xLHT1U-HrV2vRT8bYy4'
+};
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
     const p = (e && e.parameter) || {};
-    const ss = SpreadsheetApp.openById(PLANILHA_ID);
+    const ss = SpreadsheetApp.openById(PLANILHAS[p.s] || PLANILHAS.pmerj);
     const sh = ss.getSheetByName('Leads') || ss.getSheets()[0];
     const nota = Math.max(0, Math.min(10, Number(p.nota) || 0));
     sh.appendRow([new Date(), limpar(p.nome), limpar(p.whatsapp), nota]);

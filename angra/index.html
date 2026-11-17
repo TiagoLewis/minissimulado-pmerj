@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minissimulado GCM Angra dos Reis · Prof. Ismael Souto</title>
+<meta name="description" content="10 questões de Legislação da Guarda, Português e Matemática no padrão IDIB. Descubra sua nota para a GCM de Angra dos Reis.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Minissimulado GCM Angra dos Reis · Prof. Ismael Souto">
+<meta property="og:description" content="10 questões no padrão IDIB. Grátis. Descubra sua nota.">
+<meta property="og:image" content="/img/brasao-gcm-angra-480.webp">
+<link rel="icon" type="image/webp" href="/img/brasao-gcm-angra-240.webp">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/img/brasao-gcm-angra-480.webp" imagesrcset="/img/brasao-gcm-angra-240.webp 240w, /img/brasao-gcm-angra-480.webp 480w" imagesizes="200px" fetchpriority="high">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"></noscript>
+<link rel="dns-prefetch" href="https://script.google.com">
+<style>
+@font-face{font-family:"Jakarta Fallback";src:local("Arial");size-adjust:104%;ascent-override:94%;descent-override:24%;line-gap-override:0%}
+:root{
+  --bg:#000; --navy:#0b0c12; --card:#0b0c12; --card2:#11131c;
+  --ink:#f4f4f6; --gray:#a3a6b2; --dim:#8b8f9c; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+  --red:#e3161b; --red2:#ff2d3a; --gold:#ffc21a; --verde:#22c55e;
+  --grad:linear-gradient(90deg,#fff3cf 0%,#ffd45a 28%,#ffa21f 52%,#ff4a26 74%,#d0101a 100%);
+  --grad-btn:linear-gradient(100deg,#ffd45a 0%,#ffa21f 40%,#ff4a26 75%,#e3161b 100%);
+  --font:"Plus Jakarta Sans","Jakarta Fallback",Arial,system-ui,sans-serif;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}
+body{min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(900px 500px at 85% -10%,rgba(227,22,27,.18),transparent 60%),radial-gradient(800px 500px at 0% 0%,rgba(255,162,31,.10),transparent 60%),var(--bg)}
+.faixa{background:var(--grad-btn);color:#160505;font-size:12px;font-weight:700;text-align:center;padding:8px 12px;letter-spacing:.02em}
+.faixa b{background:#000;color:#fff;border-radius:20px;padding:2px 8px;margin-right:6px;font-size:10px;letter-spacing:.08em}
+.topo{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.marca{font-weight:800;font-size:15px;color:var(--gray)}
+.marca b{color:var(--gold)}
+.contador{font-size:13px;font-weight:600;color:var(--gray);font-variant-numeric:tabular-nums}
+.barra{height:4px;background:var(--card2)}
+.barra i{display:block;height:100%;width:0;background:var(--grad-btn);transition:width .3s}
+main{flex:1;width:100%;max-width:660px;margin:0 auto;padding:24px 16px 40px}
+.tela{display:none}
+.tela.ativa{display:block;animation:entra .25s ease}
+@keyframes entra{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* início */
+.inicio{text-align:center}
+.brasao{display:block;width:200px;height:auto;margin:6px auto 22px;filter:drop-shadow(0 18px 40px rgba(255,162,31,.25)) drop-shadow(0 0 60px rgba(227,22,27,.18))}
+.selo{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--ink);background:var(--card);border:1px solid var(--line2);padding:6px 12px;border-radius:30px}
+.selo i{width:7px;height:7px;border-radius:50%;background:var(--red2);box-shadow:0 0 0 4px rgba(255,45,58,.2)}
+h1{font-weight:800;font-size:clamp(34px,8vw,48px);line-height:1.04;letter-spacing:-.02em;margin:16px 0 12px}
+h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--gray);font-size:16px;line-height:1.6;max-width:500px;margin:0 auto}
+.lead b{color:var(--ink)}
+.fatos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px 0 0}
+.fato{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 6px}
+.fato b{display:block;font-size:22px;font-weight:800;color:var(--gold);line-height:1.1}
+.fato small{font-size:12px;color:var(--gray)}
+.assina{color:var(--dim);font-size:13px;margin-top:14px}
+
+/* botões */
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font:inherit;font-weight:800;font-size:17px;border:0;border-radius:60px;padding:17px 22px;cursor:pointer;background:var(--grad-btn);color:#160505;text-decoration:none;box-shadow:0 10px 30px -10px rgba(255,74,38,.55);transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none}
+.btn.fantasma{width:auto;flex:0 0 auto;background:transparent;color:var(--gray);border:1.5px solid var(--line2);box-shadow:none}
+.inicio .btn{max-width:440px;margin:24px auto 0}
+.pulsa{animation:pulsa 1.8s ease-out infinite}
+@keyframes pulsa{0%{box-shadow:0 0 0 0 rgba(255,194,26,.55)}70%{box-shadow:0 0 0 16px rgba(255,194,26,0)}100%{box-shadow:0 0 0 0 rgba(255,194,26,0)}}
+@media (prefers-reduced-motion:reduce){.pulsa{animation:none}}
+
+/* questão */
+.materia{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,194,26,.35);background:rgba(255,194,26,.07);padding:5px 10px;border-radius:20px}
+.enunciado{font-size:17px;line-height:1.65;margin:14px 0 18px;white-space:pre-line}
+.dica{font-size:13px;color:var(--dim);margin:-6px 0 14px}
+.alternativas{display:flex;flex-direction:column;gap:10px}
+.altlinha{display:flex;gap:8px;align-items:stretch}
+.alt{flex:1;min-width:0;display:flex;gap:12px;align-items:flex-start;text-align:left;background:var(--card);border:1.5px solid var(--line2);color:var(--ink);border-radius:14px;padding:14px;font:inherit;font-size:15px;line-height:1.5;cursor:pointer;transition:border-color .15s,background .15s}
+.alt:hover{border-color:rgba(255,194,26,.6)}
+.alt .letra{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;background:var(--card2);color:var(--gray)}
+.alt.marcada{border-color:var(--gold);background:rgba(255,194,26,.08)}
+.alt.marcada .letra{background:var(--grad-btn);color:#160505}
+.tesoura{flex:none;width:46px;border-radius:14px;border:1.5px solid var(--line2);background:var(--card);color:var(--gray);font-size:19px;cursor:pointer;transition:border-color .15s,color .15s}
+.tesoura:hover{border-color:var(--red2);color:var(--red2)}
+.cortada .alt{opacity:.45}
+.cortada .alt .txt{text-decoration:line-through;text-decoration-thickness:2px}
+.cortada .tesoura{border-color:var(--red2);color:var(--red2)}
+.alt:focus-visible,.tesoura:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.rodape{display:flex;gap:10px;padding-top:20px}
+
+/* dados */
+.campo{display:block;margin-top:16px}
+.campo span{display:block;font-size:14px;font-weight:600;color:var(--gray);margin-bottom:6px}
+.campo input{width:100%;background:var(--card);border:1.5px solid var(--line2);border-radius:14px;padding:15px;color:var(--ink);font:inherit;font-size:16px}
+.campo input:focus{outline:none;border-color:var(--gold)}
+.erro{color:#ff8a8a;font-size:14px;min-height:20px;margin-top:10px}
+.seguro{font-size:12.5px;color:var(--dim);margin-top:6px}
+
+/* resultado */
+.nota{text-align:center;margin:8px 0 22px}
+.nota .rot{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray)}
+.nota .num{font-weight:800;font-size:96px;line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-top:6px}
+.nota .num small{font-size:40px}
+.nota p{font-size:20px;font-weight:700;margin-top:6px}
+.msg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red2);border-radius:14px;padding:16px;line-height:1.6;color:var(--gray);margin-bottom:22px}
+.redir{text-align:center;color:var(--dim);font-size:14px;margin-top:14px}
+h2{font-weight:800;font-size:22px;margin:28px 0 12px}
+.item{border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px;background:var(--card)}
+.item .cab{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;font-size:14px}
+.item .tag{font-weight:800;font-size:12px;padding:3px 9px;border-radius:20px}
+.ok{background:rgba(34,197,94,.15);color:#5ee08f}
+.no{background:rgba(255,45,58,.15);color:#ff8a8a}
+.item .resp{color:var(--gray);font-size:13px;margin-bottom:6px}
+.item p{font-size:14.5px;line-height:1.55;color:#d6deee}
+[hidden]{display:none!important}
+@media (max-width:480px){main{padding-top:16px}.brasao{width:160px;margin-bottom:18px}h1{font-size:34px}.nota .num{font-size:84px}}
+</style>
+</head>
+<body>
+<div class="faixa"><b>GCM ANGRA</b> 1º concurso da história · Nível médio · Banca IDIB</div>
+<header class="topo">
+  <div class="marca">Instituto <b>Souto</b></div>
+  <div class="contador" id="contador"></div>
+</header>
+<div class="barra"><i id="progresso"></i></div>
+
+<main>
+  <!-- INÍCIO -->
+  <section class="tela ativa inicio" id="tInicio">
+    <img class="brasao" src="/img/brasao-gcm-angra-480.webp" srcset="/img/brasao-gcm-angra-240.webp 240w, /img/brasao-gcm-angra-480.webp 480w" sizes="200px" alt="Brasão da Guarda Civil Municipal de Angra dos Reis" width="480" height="622" fetchpriority="high" decoding="async">
+    <span class="selo"><i></i>Grátis · 10 questões · Padrão IDIB</span>
+    <h1>Minissimulado <span>GCM Angra</span></h1>
+    <p class="lead">Teste seu nível em <b>Legislação da Guarda</b>, <b>Português</b> e <b>Matemática</b> com questões no estilo da IDIB e descubra se você está pronto para a farda.</p>
+    <div class="fatos">
+      <div class="fato"><b>10</b><small>questões</small></div>
+      <div class="fato"><b>IDIB</b><small>padrão da banca</small></div>
+      <div class="fato"><b>5 min</b><small>em média</small></div>
+    </div>
+    <button class="btn pulsa" id="btnComecar" type="button">Começar agora →</button>
+    <p class="assina">Preparado pela equipe do Prof. Ismael Souto</p>
+  </section>
+
+  <!-- QUESTÃO -->
+  <section class="tela" id="tQuestao">
+    <span class="materia" id="qMateria"></span>
+    <p class="enunciado" id="qEnunciado"></p>
+    <p class="dica">Use a ✂ para cortar as alternativas que você já descartou.</p>
+    <div class="alternativas" id="qAlternativas"></div>
+  </section>
+
+  <!-- DADOS -->
+  <section class="tela" id="tDados">
+    <span class="selo"><i></i>Última etapa</span>
+    <h1>Sua nota <span>está pronta</span></h1>
+    <p class="lead" style="margin:0">Informe seu nome e WhatsApp para ver quantas questões você acertou.</p>
+    <form id="formDados" novalidate>
+      <label class="campo"><span>Nome</span><input id="nome" autocomplete="name" placeholder="Seu nome" required></label>
+      <label class="campo"><span>WhatsApp com DDD</span><input id="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" maxlength="16" required></label>
+      <div class="erro" id="erro"></div>
+      <p class="seguro">🔒 Seus dados ficam só com o Instituto Souto.</p>
+    </form>
+  </section>
+
+  <!-- RESULTADO -->
+  <section class="tela" id="tResultado">
+    <div class="nota"><div class="rot">Sua nota</div><div class="num" id="rNota"></div><p id="rFrase"></p></div>
+    <div class="msg" id="rMsg"></div>
+    <a class="btn" id="rCurso" href="#">Conhecer a Preparação GCM Angra →</a>
+    <p class="redir" id="rRedir"></p>
+    <div id="blocoCorrecao" hidden>
+      <h2>Correção comentada</h2>
+      <div id="rCorrecao"></div>
+    </div>
+  </section>
+
+  <div class="rodape" hidden>
+    <button class="btn fantasma" id="btnVoltar" type="button">Voltar</button>
+    <button class="btn" id="btnAvancar" type="button">Próxima</button>
+  </div>
+</main>
+
+<script>
+/* ============ CONFIGURAÇÃO ============ */
+const CONFIG = {
+  // Cole aqui a URL do App Script (Implantar > Nova implantação > App da Web), termina em /exec
+  planilha: 'https://script.google.com/macros/s/AKfycbzQ22gON779vv_ZNiC4OIml-ldfaTujK6cg_WlaW4ryb3FV7ZIabrLIgLVIJL2pxSGC/exec',
+  // Página para onde a pessoa vai depois de ver a nota
+  destino: 'https://angradosreis.institutosouto.com.br/',
+  // true = mostra a nota e redireciona sozinho depois de X segundos
+  // false = mostra a nota + correção comentada e só vai pro site pelo botão
+  redirecionar: false,
+  segundos: 6
+};
+
+/* ============ QUESTÕES ============ */
+const QUESTOES = [
+  { materia: 'Legislação da Guarda',
+    enunciado: 'De acordo com o Estatuto Geral das Guardas Municipais (Lei nº 13.022/2014), as guardas municipais são instituições:',
+    alternativas: ['de caráter militar, subordinadas ao comando da Polícia Militar do Estado.', 'de caráter civil, uniformizadas e armadas conforme previsto em lei, com a função de proteção municipal preventiva.', 'de caráter civil, sem uniforme, com função exclusivamente administrativa.', 'de caráter militar, responsáveis pela investigação de crimes no município.'],
+    certa: 1,
+    comentario: 'Art. 2º da Lei 13.022/2014: incumbe às guardas municipais, instituições de caráter civil, uniformizadas e armadas conforme previsto em lei, a função de proteção municipal preventiva, ressalvadas as competências da União, dos Estados e do Distrito Federal. A Guarda não é militar e não investiga crimes.' },
+
+  { materia: 'Legislação da Guarda',
+    enunciado: 'O art. 3º da Lei nº 13.022/2014 lista os princípios mínimos de atuação das guardas municipais. NÃO é um desses princípios:',
+    alternativas: ['o patrulhamento preventivo.', 'o uso progressivo da força.', 'a hierarquia e disciplina de natureza militar.', 'a preservação da vida, a redução do sofrimento e a diminuição das perdas.'],
+    certa: 2,
+    comentario: 'Os princípios do art. 3º são: proteção dos direitos humanos fundamentais, do exercício da cidadania e das liberdades públicas; preservação da vida, redução do sofrimento e diminuição das perdas; patrulhamento preventivo; compromisso com a evolução social da comunidade; e uso progressivo da força. Hierarquia militar não está na lista, até porque a Guarda é instituição civil.' },
+
+  { materia: 'Legislação da Guarda',
+    enunciado: 'Segundo a Lei nº 13.022/2014, é requisito básico para a investidura no cargo público de guarda municipal:',
+    alternativas: ['ter nível superior completo.', 'ter idade mínima de 21 anos.', 'já ter servido nas Forças Armadas.', 'ter nível médio completo de escolaridade.'],
+    certa: 3,
+    comentario: 'O art. 10 exige, entre outros requisitos: nacionalidade brasileira, gozo dos direitos políticos, quitação com as obrigações militares e eleitorais, nível médio completo de escolaridade, idade mínima de 18 anos, aptidão física, mental e psicológica e idoneidade moral. Não exige nível superior nem serviço militar prévio.' },
+
+  { materia: 'Legislação da Guarda',
+    enunciado: 'Sobre o regime disciplinar das guardas municipais, a Lei nº 13.022/2014 determina que elas:',
+    alternativas: ['devem seguir o regulamento disciplinar do Exército.', 'não podem ficar sujeitas a regulamentos disciplinares de natureza militar.', 'seguem obrigatoriamente o regulamento disciplinar da Polícia Militar do Estado.', 'não precisam ter código de conduta próprio.'],
+    certa: 1,
+    comentario: 'Art. 14: para efeito do disposto no § 8º do art. 144 da Constituição, a guarda municipal terá código de conduta próprio, conforme dispuser lei municipal. O parágrafo único completa: as guardas municipais não podem ficar sujeitas a regulamentos disciplinares de natureza militar.' },
+
+  { materia: 'Língua Portuguesa',
+    enunciado: 'Assinale a alternativa em que o uso do acento grave, indicativo de crase, está CORRETO:',
+    alternativas: ['O relatório foi entregue à ele no fim do plantão.', 'O guarda dirigiu-se à praça central para a ronda.', 'A equipe começou à patrulhar o bairro às oito.', 'O comandante se referiu à pessoas que estavam no local.'],
+    certa: 1,
+    comentario: '"Dirigir-se a" + "a praça" = "à praça": há preposição e artigo feminino, então a crase está correta. Não há crase antes de pronome pessoal ("a ele"), antes de verbo ("a patrulhar") nem antes de palavra no plural quando o "a" está no singular ("a pessoas").' },
+
+  { materia: 'Língua Portuguesa',
+    enunciado: 'Assinale a frase que está de acordo com a norma-padrão quanto à concordância verbal:',
+    alternativas: ['Fazem cinco anos que não há concurso na cidade.', 'Houveram muitas ocorrências durante o evento.', 'Devem haver vagas para todos os aprovados.', 'Faz cinco anos que não há concurso na cidade.'],
+    certa: 3,
+    comentario: 'O verbo "fazer", indicando tempo decorrido, é impessoal e fica no singular: "Faz cinco anos". O verbo "haver" no sentido de existir também é impessoal: "Houve muitas ocorrências" e "Deve haver vagas". O verbo auxiliar acompanha o principal impessoal e também fica no singular.' },
+
+  { materia: 'Língua Portuguesa',
+    enunciado: 'Assinale a alternativa em que a forma "por que / porque / por quê / porquê" está empregada corretamente:',
+    alternativas: ['Por que você não compareceu ao plantão?', 'Ele faltou por que estava doente.', 'Você não veio ao plantão porquê?', 'Ninguém entendeu o por quê da mudança.'],
+    certa: 0,
+    comentario: 'Em perguntas diretas, no início da frase, usa-se "por que" separado e sem acento. "Porque" junto é usado em respostas e explicações ("faltou porque estava doente"). No fim da frase, usa-se "por quê" ("veio por quê?"). E, quando é substantivo, usa-se "o porquê" ("o porquê da mudança").' },
+
+  { materia: 'Matemática',
+    enunciado: 'Um uniforme custa R$ 80,00. Na compra à vista, a loja dá 15% de desconto. Quanto o guarda vai pagar à vista?',
+    alternativas: ['R$ 65,00', 'R$ 68,00', 'R$ 70,00', 'R$ 72,00'],
+    certa: 1,
+    comentario: '15% de 80 = 0,15 × 80 = 12. Preço à vista: 80 − 12 = R$ 68,00. Atalho: pagar 85% do valor, ou seja, 0,85 × 80 = 68.' },
+
+  { materia: 'Matemática',
+    enunciado: 'Seis guardas, trabalhando no mesmo ritmo, fazem a ronda completa de um bairro em 10 dias. Em quantos dias 12 guardas, no mesmo ritmo, fariam o mesmo serviço?',
+    alternativas: ['20 dias', '8 dias', '5 dias', '4 dias'],
+    certa: 2,
+    comentario: 'É uma regra de três inversa: dobrando o número de guardas, o tempo cai pela metade. 6 × 10 = 12 × x, então x = 60 ÷ 12 = 5 dias.' },
+
+  { materia: 'Matemática',
+    enunciado: 'Em uma turma de 40 candidatos, 3/8 são mulheres. Quantos homens há nessa turma?',
+    alternativas: ['25', '15', '20', '30'],
+    certa: 0,
+    comentario: 'Mulheres: 3/8 de 40 = 40 ÷ 8 × 3 = 15. Homens: 40 − 15 = 25. Cuidado: a pergunta é sobre os homens, e 15 (o número de mulheres) é a pegadinha.' }
+];
+
+/* ============ APP ============ */
+const LETRAS = ['A', 'B', 'C', 'D', 'E'];
+const $ = id => document.getElementById(id);
+const N = QUESTOES.length;
+let atual = -1, respostas = [], cortes = [];
+
+function tela(id) { document.querySelectorAll('.tela').forEach(t => t.classList.toggle('ativa', t.id === id)); window.scrollTo(0, 0); }
+function progresso() {
+  $('progresso').style.width = (atual < 0 ? 0 : Math.min(atual + 1, N) / N * 100) + '%';
+  $('contador').textContent = atual >= 0 && atual < N ? `Questão ${atual + 1} de ${N}` : '';
+}
+
+function mostrarQuestao() {
+  const q = QUESTOES[atual];
+  $('qMateria').textContent = q.materia;
+  $('qEnunciado').textContent = q.enunciado;
+  $('qAlternativas').innerHTML = '';
+  const cortadas = cortes[atual] || (cortes[atual] = new Set());
+  q.alternativas.forEach((a, i) => {
+    const linha = document.createElement('div');
+    linha.className = 'altlinha' + (cortadas.has(i) ? ' cortada' : '');
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'alt' + (respostas[atual] === i ? ' marcada' : '');
+    b.innerHTML = `<span class="letra">${LETRAS[i]}</span><span class="txt"></span>`;
+    b.lastChild.textContent = a;
+    b.onclick = () => { respostas[atual] = i; cortadas.delete(i); mostrarQuestao(); };
+    const t = document.createElement('button');
+    t.type = 'button';
+    t.className = 'tesoura';
+    t.title = cortadas.has(i) ? 'Desfazer corte' : 'Cortar esta alternativa';
+    t.setAttribute('aria-label', (cortadas.has(i) ? 'Desfazer corte da alternativa ' : 'Cortar a alternativa ') + LETRAS[i]);
+    t.textContent = '✂';
+    t.onclick = () => {
+      if (cortadas.has(i)) cortadas.delete(i); else { cortadas.add(i); if (respostas[atual] === i) respostas[atual] = undefined; }
+      mostrarQuestao();
+    };
+    linha.append(b, t);
+    $('qAlternativas').appendChild(linha);
+  });
+  $('btnVoltar').hidden = atual === 0;
+  $('btnAvancar').textContent = atual === N - 1 ? 'Finalizar' : 'Próxima';
+  $('btnAvancar').disabled = !Number.isInteger(respostas[atual]);
+  tela('tQuestao'); progresso();
+}
+
+$('btnComecar').onclick = () => { atual = 0; document.querySelector('.rodape').hidden = false; mostrarQuestao(); };
+
+$('btnVoltar').onclick = () => { if (atual > 0) { atual--; mostrarQuestao(); } };
+
+$('btnAvancar').onclick = () => {
+  if (atual < N - 1) { atual++; return mostrarQuestao(); }
+  if (atual === N - 1) {
+    atual = N; tela('tDados'); progresso();
+    $('btnVoltar').hidden = false;
+    $('btnAvancar').textContent = 'Ver minha nota'; $('btnAvancar').disabled = false;
+    $('nome').focus(); return;
+  }
+  if (atual === N) enviar();
+};
+$('formDados').onsubmit = e => { e.preventDefault(); enviar(); };
+
+// máscara (21) 99999-9999
+$('whatsapp').addEventListener('input', e => {
+  const d = e.target.value.replace(/\D/g, '').slice(0, 11);
+  e.target.value = d.length > 6 ? `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}`
+    : d.length > 2 ? `(${d.slice(0, 2)}) ${d.slice(2)}` : d.length ? `(${d}` : '';
+});
+
+function enviar() {
+  const nome = $('nome').value.trim(), whatsapp = $('whatsapp').value.trim();
+  const digitos = whatsapp.replace(/\D/g, '');
+  if (nome.length < 2) return $('erro').textContent = 'Informe seu nome.';
+  if (digitos.length < 10 || digitos.length > 11) return $('erro').textContent = 'Informe um WhatsApp com DDD.';
+  $('erro').textContent = '';
+  $('btnAvancar').disabled = true; $('btnAvancar').textContent = 'Corrigindo...';
+
+  const acertos = QUESTOES.reduce((s, q, i) => s + (respostas[i] === q.certa ? 1 : 0), 0);
+
+  // envia para a planilha (não trava a tela se falhar)
+  if (CONFIG.planilha.startsWith('https://')) {
+    const corpo = new URLSearchParams({ s: 'angra', nome, whatsapp, nota: acertos, total: N,
+      respostas: respostas.map(r => LETRAS[r] || '-').join('') });
+    fetch(CONFIG.planilha, { method: 'POST', mode: 'no-cors', keepalive: true, body: corpo }).catch(() => {});
+  }
+  resultado(acertos, nome.split(/\s+/)[0]);
+}
+
+function resultado(acertos, primeiro) {
+  const pct = acertos / N;
+  $('rNota').innerHTML = `${acertos}<small>/${N}</small>`;
+  $('rFrase').textContent = pct >= .9 ? `Excelente, ${primeiro}!` : pct >= .6 ? `Bom começo, ${primeiro}!` : `Ainda dá tempo, ${primeiro}!`;
+  $('rMsg').textContent = pct >= .9
+    ? 'Você já tem uma boa base. Na prova da IDIB as questões vêm mais elaboradas: o próximo passo é treinar no nível real da banca.'
+    : pct >= .6
+      ? 'Você acertou o básico, mas errou pontos que a IDIB cobra com frequência. É exatamente aí que se ganha a vaga.'
+      : 'Essas são questões de base, e a prova da IDIB vem mais difícil. Quem começa agora, com direção, chega na prova preparado.';
+  $('rCurso').href = CONFIG.destino;
+  document.querySelector('.rodape').hidden = true;
+  $('contador').textContent = 'Resultado';
+  $('progresso').style.width = '100%';
+
+  if (CONFIG.redirecionar) {
+    let s = CONFIG.segundos;
+    const tick = () => {
+      if (s <= 0) return location.href = CONFIG.destino;
+      $('rRedir').textContent = `Levando você para a Preparação GCM Angra em ${s}s...`;
+      s--; setTimeout(tick, 1000);
+    };
+    tick();
+  } else {
+    $('rCorrecao').innerHTML = '';
+    QUESTOES.forEach((q, i) => {
+      const ok = respostas[i] === q.certa;
+      const d = document.createElement('div');
+      d.className = 'item';
+      d.innerHTML = `<div class="cab"><b>Questão ${i + 1} · ${q.materia}</b><span class="tag ${ok ? 'ok' : 'no'}">${ok ? 'Acertou' : 'Errou'}</span></div><div class="resp"></div><p></p>`;
+      d.querySelector('.resp').textContent = `Sua resposta: ${LETRAS[respostas[i]]} · Gabarito: ${LETRAS[q.certa]}`;
+      d.querySelector('p').textContent = q.comentario;
+      $('rCorrecao').appendChild(d);
+    });
+    $('blocoCorrecao').hidden = false;
+  }
+  tela('tResultado');
+}
+</script>
+</body>
+</html>
