@@ -212,30 +212,36 @@ function finalizar(){
 
   if(window.fbq) fbq('trackCustom','QuizConcluido');
 
-  /* salva as respostas (quando o endpoint estiver plugado) */
+  /* salva as respostas (envio comum: o mais confiável nos testes) */
+  var envio = Promise.resolve(), enviado = false;
   if(ENDPOINT){
     var payload = JSON.stringify({tipo:'quiz', s:QUIZ, nome:LEAD.nome, whatsapp:LEAD.whatsapp, email:LEAD.email,
       evento:EVENTO, variante:LEAD.v||'', respostas:respostas,
       utm_source:LEAD.utm_source, utm_medium:LEAD.utm_medium, utm_campaign:LEAD.utm_campaign, utm_content:LEAD.utm_content});
-    var enviado = false;
-    /* sendBeacon: feito para enviar dados mesmo saindo da página (mais confiável no celular) */
-    try{ if(navigator.sendBeacon) enviado = navigator.sendBeacon(ENDPOINT, new Blob([payload], {type:'text/plain;charset=utf-8'})); }catch(x){}
-    if(!enviado){
-      try{ fetch(ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:payload}); }catch(x){}
-    }
+    try{
+      envio = fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:payload})
+        .then(function(){ enviado = true; }, function(){});
+    }catch(x){}
   }
 
-  /* redireciona sozinho em 5s; clicar antes cancela o contador */
-  var seg = 5, elSeg = document.getElementById('seg'), btn = document.getElementById('grupo');
+  /* redireciona sozinho em 5s, mas só depois de gravar a resposta (espera no máximo +4s) */
+  var seg = 5, elSeg = document.getElementById('seg'), btn = document.getElementById('grupo'), indo = false;
   if(GRUPO) btn.setAttribute('href', GRUPO);
+  function irProGrupo(){
+    if(indo || !GRUPO) return; indo = true;
+    var vai = function(){ location.href = GRUPO; };
+    if(enviado) return vai();
+    envio.then(vai); setTimeout(vai, 4000);
+  }
   var t = setInterval(function(){
-    seg--; if(elSeg) elSeg.textContent = seg;
-    if(seg <= 0){ clearInterval(t); if(GRUPO) location.href = GRUPO; }
+    seg--; if(elSeg) elSeg.textContent = Math.max(seg,0);
+    if(seg <= 0){ clearInterval(t); irProGrupo(); }
   }, 1000);
-  btn.addEventListener('click', function(){
+  btn.addEventListener('click', function(e){
     clearInterval(t);
     var a=document.getElementById('auto'); if(a) a.style.display='none';
     if(window.fbq) fbq('track','CompleteRegistration',{content_name:'Grupo WhatsApp GCM Angra'});
+    if(GRUPO && !enviado){ e.preventDefault(); irProGrupo(); }
   });
   if(!GRUPO){ var a=document.getElementById('auto'); if(a) a.textContent='(link do grupo ainda não configurado)'; }
 }
