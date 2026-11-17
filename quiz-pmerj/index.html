@@ -214,12 +214,15 @@ function finalizar(){
 
   /* salva as respostas (quando o endpoint estiver plugado) */
   if(ENDPOINT){
-    try{
-      fetch(ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},
-        body: JSON.stringify({tipo:'quiz', s:QUIZ, nome:LEAD.nome, whatsapp:LEAD.whatsapp, email:LEAD.email,
-          evento:EVENTO, variante:LEAD.v||'', respostas:respostas,
-          utm_source:LEAD.utm_source, utm_medium:LEAD.utm_medium, utm_campaign:LEAD.utm_campaign, utm_content:LEAD.utm_content})});
-    }catch(x){}
+    var payload = JSON.stringify({tipo:'quiz', s:QUIZ, nome:LEAD.nome, whatsapp:LEAD.whatsapp, email:LEAD.email,
+      evento:EVENTO, variante:LEAD.v||'', respostas:respostas,
+      utm_source:LEAD.utm_source, utm_medium:LEAD.utm_medium, utm_campaign:LEAD.utm_campaign, utm_content:LEAD.utm_content});
+    var enviado = false;
+    /* sendBeacon: feito para enviar dados mesmo saindo da página (mais confiável no celular) */
+    try{ if(navigator.sendBeacon) enviado = navigator.sendBeacon(ENDPOINT, new Blob([payload], {type:'text/plain;charset=utf-8'})); }catch(x){}
+    if(!enviado){
+      try{ fetch(ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},body:payload}); }catch(x){}
+    }
   }
 
   /* redireciona sozinho em 5s; clicar antes cancela o contador */
