@@ -6,7 +6,7 @@
 // cada quiz manda o parâmetro s; sem s = PMERJ
 const PLANILHAS = {
   pmerj: '1Z3ZiFKirWHvZ6PREbwf3VHUYUnww1GwPuMUBJmLWEt8',
-  angra: '1zxyTcQ31rs8s3tPb5I6CxGu_xLHT1U-HrV2vRT8bYy4'
+  angra: '1TTVboxNMqGN-KyJDkG8cseDg83Vyh0-d74SoboRocAk'
 };
 
 function doPost(e) {
