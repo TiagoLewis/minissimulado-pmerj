@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minissimulado PMERJ · Prof. Ismael Souto</title>
+<meta name="description" content="10 questões de Direito Penal e Direito Administrativo no padrão FGV. Descubra sua nota para a PMERJ.">
+<meta name="theme-color" content="#061230">
+<meta property="og:title" content="Minissimulado PMERJ · Prof. Ismael Souto">
+<meta property="og:description" content="10 questões no padrão FGV. Grátis. Descubra sua nota.">
+<meta property="og:image" content="https://preparatoriopmerj.institutosouto.com.br/img/og-pmerj.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="https://preparatoriopmerj.institutosouto.com.br/img/hero-desktop.webp">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#061230; --navy:#0a1d45; --card:#0c1c40; --card2:#11244e;
+  --ink:#f4f6fb; --gray:#a9b6d3; --dim:#7f8db0; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+  --red:#e3161b; --red2:#ff2d3a; --gold:#ffc21a; --verde:#22c55e;
+  --grad:linear-gradient(90deg,#fff 0%,#fff1c4 22%,#ffd45a 52%,#f2b320 78%,#e0a106 100%);
+  --grad-btn:linear-gradient(100deg,#ffe58a 0%,#ffd04a 38%,#f2b320 72%,#d99a06 100%);
+  --font:"Plus Jakarta Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased}
+body{min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(900px 500px at 85% -10%,rgba(227,22,27,.16),transparent 60%),radial-gradient(800px 500px at 0% 0%,rgba(47,123,255,.12),transparent 60%),var(--bg)}
+.faixa{background:var(--grad-btn);color:#0a1a3a;font-size:12px;font-weight:700;text-align:center;padding:8px 12px;letter-spacing:.02em}
+.faixa b{background:#0a1a3a;color:#fff;border-radius:20px;padding:2px 8px;margin-right:6px;font-size:10px;letter-spacing:.08em}
+.topo{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.marca{font-weight:800;font-size:15px;color:var(--gray)}
+.marca b{color:var(--gold)}
+.contador{font-size:13px;font-weight:600;color:var(--gray);font-variant-numeric:tabular-nums}
+.barra{height:4px;background:var(--card2)}
+.barra i{display:block;height:100%;width:0;background:var(--grad-btn);transition:width .3s}
+main{flex:1;width:100%;max-width:660px;margin:0 auto;padding:24px 16px 40px}
+.tela{display:none}
+.tela.ativa{display:block;animation:entra .25s ease}
+@keyframes entra{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* início */
+.inicio{text-align:center}
+.capa{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);aspect-ratio:16/9;margin-bottom:22px;background:var(--card)}
+.capa img{width:100%;height:100%;object-fit:cover;object-position:70% 30%;display:block}
+.capa:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(6,18,48,.9))}
+.selo{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--ink);background:var(--card);border:1px solid var(--line2);padding:6px 12px;border-radius:30px}
+.selo i{width:7px;height:7px;border-radius:50%;background:var(--red2);box-shadow:0 0 0 4px rgba(255,45,58,.2)}
+h1{font-weight:800;font-size:clamp(34px,8vw,48px);line-height:1.04;letter-spacing:-.02em;margin:16px 0 12px}
+h1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--gray);font-size:16px;line-height:1.6;max-width:500px;margin:0 auto}
+.lead b{color:var(--ink)}
+.fatos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:22px 0 0}
+.fato{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 6px}
+.fato b{display:block;font-size:22px;font-weight:800;color:var(--gold);line-height:1.1}
+.fato small{font-size:12px;color:var(--gray)}
+.assina{color:var(--dim);font-size:13px;margin-top:14px}
+
+/* botões */
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font:inherit;font-weight:800;font-size:17px;border:0;border-radius:60px;padding:17px 22px;cursor:pointer;background:var(--grad-btn);color:#0a1a3a;text-decoration:none;box-shadow:0 10px 30px -10px rgba(242,179,32,.55);transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none}
+.btn.fantasma{width:auto;flex:0 0 auto;background:transparent;color:var(--gray);border:1.5px solid var(--line2);box-shadow:none}
+.inicio .btn{max-width:440px;margin:24px auto 0}
+.pulsa{animation:pulsa 1.8s ease-out infinite}
+@keyframes pulsa{0%{box-shadow:0 0 0 0 rgba(255,194,26,.55)}70%{box-shadow:0 0 0 16px rgba(255,194,26,0)}100%{box-shadow:0 0 0 0 rgba(255,194,26,0)}}
+@media (prefers-reduced-motion:reduce){.pulsa{animation:none}}
+
+/* questão */
+.materia{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,194,26,.35);background:rgba(255,194,26,.07);padding:5px 10px;border-radius:20px}
+.enunciado{font-size:17px;line-height:1.65;margin:14px 0 18px;white-space:pre-line}
+.dica{font-size:13px;color:var(--dim);margin:-6px 0 14px}
+.alternativas{display:flex;flex-direction:column;gap:10px}
+.altlinha{display:flex;gap:8px;align-items:stretch}
+.alt{flex:1;min-width:0;display:flex;gap:12px;align-items:flex-start;text-align:left;background:var(--card);border:1.5px solid var(--line2);color:var(--ink);border-radius:14px;padding:14px;font:inherit;font-size:15px;line-height:1.5;cursor:pointer;transition:border-color .15s,background .15s}
+.alt:hover{border-color:rgba(255,194,26,.6)}
+.alt .letra{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:13px;background:var(--card2);color:var(--gray)}
+.alt.marcada{border-color:var(--gold);background:rgba(255,194,26,.08)}
+.alt.marcada .letra{background:var(--grad-btn);color:#0a1a3a}
+.tesoura{flex:none;width:46px;border-radius:14px;border:1.5px solid var(--line2);background:var(--card);color:var(--gray);font-size:19px;cursor:pointer;transition:border-color .15s,color .15s}
+.tesoura:hover{border-color:var(--red2);color:var(--red2)}
+.cortada .alt{opacity:.45}
+.cortada .alt .txt{text-decoration:line-through;text-decoration-thickness:2px}
+.cortada .tesoura{border-color:var(--red2);color:var(--red2)}
+.alt:focus-visible,.tesoura:focus-visible,.btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.rodape{display:flex;gap:10px;padding-top:20px}
+
+/* dados */
+.campo{display:block;margin-top:16px}
+.campo span{display:block;font-size:14px;font-weight:600;color:var(--gray);margin-bottom:6px}
+.campo input{width:100%;background:var(--card);border:1.5px solid var(--line2);border-radius:14px;padding:15px;color:var(--ink);font:inherit;font-size:16px}
+.campo input:focus{outline:none;border-color:var(--gold)}
+.erro{color:#ff8a8a;font-size:14px;min-height:20px;margin-top:10px}
+.seguro{font-size:12.5px;color:var(--dim);margin-top:6px}
+
+/* resultado */
+.nota{text-align:center;margin:8px 0 22px}
+.nota .rot{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray)}
+.nota .num{font-weight:800;font-size:96px;line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-top:6px}
+.nota .num small{font-size:40px}
+.nota p{font-size:20px;font-weight:700;margin-top:6px}
+.msg{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red2);border-radius:14px;padding:16px;line-height:1.6;color:var(--gray);margin-bottom:22px}
+.redir{text-align:center;color:var(--dim);font-size:14px;margin-top:14px}
+h2{font-weight:800;font-size:22px;margin:28px 0 12px}
+.item{border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px;background:var(--card)}
+.item .cab{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;font-size:14px}
+.item .tag{font-weight:800;font-size:12px;padding:3px 9px;border-radius:20px}
+.ok{background:rgba(34,197,94,.15);color:#5ee08f}
+.no{background:rgba(255,45,58,.15);color:#ff8a8a}
+.item .resp{color:var(--gray);font-size:13px;margin-bottom:6px}
+.item p{font-size:14.5px;line-height:1.55;color:#d6deee}
+[hidden]{display:none!important}
+@media (max-width:480px){main{padding-top:16px}h1{font-size:34px}.nota .num{font-size:84px}}
+</style>
+</head>
+<body>
+<div class="faixa"><b>PMERJ</b> Sem limite de idade · Nível médio · Banca FGV</div>
+<header class="topo">
+  <div class="marca">Instituto <b>Souto</b></div>
+  <div class="contador" id="contador"></div>
+</header>
+<div class="barra"><i id="progresso"></i></div>
+
+<main>
+  <!-- INÍCIO -->
+  <section class="tela ativa inicio" id="tInicio">
+    <div class="capa"><img src="https://preparatoriopmerj.institutosouto.com.br/img/hero-desktop.webp" alt="Prof. Ismael Souto e o brasão da PMERJ" width="1600" height="900" fetchpriority="high"></div>
+    <span class="selo"><i></i>Grátis · 10 questões · Padrão FGV</span>
+    <h1>Minissimulado <span>PMERJ</span></h1>
+    <p class="lead">Teste seu nível em <b>Direito Penal</b> e <b>Direito Administrativo</b> com questões no estilo da FGV e descubra se você está pronto para a farda.</p>
+    <div class="fatos">
+      <div class="fato"><b>10</b><small>questões</small></div>
+      <div class="fato"><b>FGV</b><small>padrão da banca</small></div>
+      <div class="fato"><b>5 min</b><small>em média</small></div>
+    </div>
+    <button class="btn pulsa" id="btnComecar" type="button">Começar agora →</button>
+    <p class="assina">Preparado pela equipe do Prof. Ismael Souto</p>
+  </section>
+
+  <!-- QUESTÃO -->
+  <section class="tela" id="tQuestao">
+    <span class="materia" id="qMateria"></span>
+    <p class="enunciado" id="qEnunciado"></p>
+    <p class="dica">Use a ✂ para cortar as alternativas que você já descartou.</p>
+    <div class="alternativas" id="qAlternativas"></div>
+  </section>
+
+  <!-- DADOS -->
+  <section class="tela" id="tDados">
+    <span class="selo"><i></i>Última etapa</span>
+    <h1>Sua nota <span>está pronta</span></h1>
+    <p class="lead" style="margin:0">Informe seu nome e WhatsApp para ver quantas questões você acertou.</p>
+    <form id="formDados" novalidate>
+      <label class="campo"><span>Nome</span><input id="nome" autocomplete="name" placeholder="Seu nome" required></label>
+      <label class="campo"><span>WhatsApp com DDD</span><input id="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" maxlength="16" required></label>
+      <div class="erro" id="erro"></div>
+      <p class="seguro">🔒 Seus dados ficam só com o Instituto Souto.</p>
+    </form>
+  </section>
+
+  <!-- RESULTADO -->
+  <section class="tela" id="tResultado">
+    <div class="nota"><div class="rot">Sua nota</div><div class="num" id="rNota"></div><p id="rFrase"></p></div>
+    <div class="msg" id="rMsg"></div>
+    <a class="btn" id="rCurso" href="#">Conhecer a Preparação PMERJ →</a>
+    <p class="redir" id="rRedir"></p>
+    <div id="blocoCorrecao" hidden>
+      <h2>Correção comentada</h2>
+      <div id="rCorrecao"></div>
+    </div>
+  </section>
+
+  <div class="rodape" hidden>
+    <button class="btn fantasma" id="btnVoltar" type="button">Voltar</button>
+    <button class="btn" id="btnAvancar" type="button">Próxima</button>
+  </div>
+</main>
+
+<script>
+/* ============ CONFIGURAÇÃO ============ */
+const CONFIG = {
+  // Cole aqui a URL do App Script (Implantar > Nova implantação > App da Web), termina em /exec
+  planilha: 'COLE_AQUI_A_URL_DO_APPS_SCRIPT',
+  // Página para onde a pessoa vai depois de ver a nota
+  destino: 'https://preparatoriopmerj.institutosouto.com.br/',
+  // true = mostra a nota e redireciona sozinho depois de X segundos
+  // false = mostra a nota + correção comentada e só vai pro site pelo botão
+  redirecionar: false,
+  segundos: 6
+};
+
+/* ============ QUESTÕES ============ */
+const QUESTOES = [
+  { materia: 'Direito Penal',
+    enunciado: 'Pedro, querendo matar seu desafeto, aponta para ele um revólver e aperta o gatilho várias vezes. A arma, porém, estava totalmente desmuniciada, fato que Pedro desconhecia.\n\nConsiderando o Código Penal, é correto afirmar que Pedro:',
+    alternativas: ['responde por tentativa de homicídio, com a pena reduzida de um a dois terços.', 'responde por homicídio consumado, pois agiu com dolo de matar.', 'não responde por tentativa, pois houve crime impossível por ineficácia absoluta do meio.', 'responde por ameaça, crime residual quando o homicídio não se consuma.', 'responde por tentativa de homicídio, sem qualquer redução de pena.'],
+    certa: 2,
+    comentario: 'Art. 17 do CP: não se pune a tentativa quando, por ineficácia absoluta do meio ou por absoluta impropriedade do objeto, é impossível consumar-se o crime. Arma totalmente desmuniciada é meio absolutamente ineficaz. É o chamado crime impossível (tentativa inidônea).' },
+
+  { materia: 'Direito Penal',
+    enunciado: 'Durante um assalto a um ônibus, o criminoso mantém um passageiro como refém, com uma faca em seu pescoço. Um policial militar, para cessar o risco à vítima, efetua um disparo e atinge o agressor.\n\nSegundo o Código Penal, a conduta do policial:',
+    alternativas: ['configura estrito cumprimento do dever legal, e não legítima defesa, por se tratar de agente público.', 'é expressamente considerada legítima defesa, pois o agente de segurança pública repeliu agressão ou risco de agressão a vítima mantida refém.', 'só seria lícita se o próprio policial estivesse sendo agredido.', 'configura excesso punível, pois havia possibilidade de negociação.', 'configura estado de necessidade, pois o refém corria perigo atual.'],
+    certa: 1,
+    comentario: 'O parágrafo único do art. 25 do CP (incluído pela Lei 13.964/2019) prevê que também se considera em legítima defesa o agente de segurança pública que repele agressão ou risco de agressão a vítima mantida refém durante a prática de crimes, observados os requisitos do caput.' },
+
+  { materia: 'Direito Penal',
+    enunciado: 'Um servidor público aborda um comerciante e exige R$ 2.000,00 para não lavrar um auto de infração. Assustado, o comerciante não paga e denuncia o fato.\n\nA conduta do servidor caracteriza:',
+    alternativas: ['corrupção passiva tentada, já que o dinheiro não foi entregue.', 'concussão consumada, crime formal que se consuma com a simples exigência.', 'peculato, pois o servidor se valeu do cargo para obter vantagem.', 'prevaricação, pois deixou de praticar ato de ofício.', 'concussão tentada, já que não houve recebimento da vantagem.'],
+    certa: 1,
+    comentario: 'Exigir vantagem indevida em razão da função é concussão (art. 316 do CP). O verbo "exigir" é o que diferencia da corrupção passiva (solicitar ou receber, art. 317). Por ser crime formal, consuma-se no momento da exigência, ainda que a vantagem nunca seja paga.' },
+
+  { materia: 'Direito Penal',
+    enunciado: 'João entra em uma residência para furtar uma televisão. Já dentro do imóvel, arrepende-se por conta própria e vai embora sem levar nada, sem que ninguém o tenha impedido.\n\nNessa situação, João:',
+    alternativas: ['responde por tentativa de furto, pois iniciou a execução.', 'tem direito ao arrependimento posterior, com redução de pena.', 'não responde por nenhum crime, pois o arrependimento exclui a tipicidade de todos os atos.', 'beneficia-se da desistência voluntária e só responde pelos atos já praticados.', 'beneficia-se do arrependimento eficaz e fica isento de pena.'],
+    certa: 3,
+    comentario: 'Art. 15 do CP: o agente que, voluntariamente, desiste de prosseguir na execução só responde pelos atos já praticados. Como João parou no meio da execução, é desistência voluntária (arrependimento eficaz é quando a execução já terminou e o agente impede o resultado). Ele não responde pelo furto tentado, mas pode responder pela violação de domicílio.' },
+
+  { materia: 'Direito Penal',
+    enunciado: 'Maria furtou um celular de uma loja. Antes do recebimento da denúncia, por ato voluntário, devolveu o aparelho intacto ao proprietário.\n\nDe acordo com o Código Penal, Maria:',
+    alternativas: ['terá a pena reduzida de um a dois terços, pelo arrependimento posterior.', 'terá extinta a punibilidade, pois reparou integralmente o dano.', 'não terá qualquer benefício, pois o crime já estava consumado.', 'será beneficiada pela desistência voluntária.', 'terá direito ao perdão judicial obrigatório.'],
+    certa: 0,
+    comentario: 'Art. 16 do CP: nos crimes cometidos sem violência ou grave ameaça à pessoa, reparado o dano ou restituída a coisa até o recebimento da denúncia ou da queixa, por ato voluntário do agente, a pena será reduzida de um a dois terços. É o arrependimento posterior: o crime já se consumou, mas a pena diminui.' },
+
+  { materia: 'Direito Administrativo',
+    enunciado: 'Em uma fiscalização, agentes públicos apreendem mercadorias impróprias para consumo em um mercado, sem precisar de prévia autorização do Poder Judiciário.\n\nO atributo do poder de polícia que permite essa atuação é a:',
+    alternativas: ['presunção de legitimidade.', 'tipicidade.', 'imperatividade.', 'autoexecutoriedade.', 'discricionariedade.'],
+    certa: 3,
+    comentario: 'Autoexecutoriedade é o atributo que permite à Administração executar suas próprias decisões, com meios diretos de coerção, sem precisar recorrer previamente ao Judiciário. Os atributos clássicos do poder de polícia são discricionariedade, autoexecutoriedade e coercibilidade.' },
+
+  { materia: 'Direito Administrativo',
+    enunciado: 'Durante uma perseguição, uma viatura da Polícia Militar colide com o carro de um particular, causando danos. A vítima deseja ser indenizada.\n\nConsiderando a Constituição e a jurisprudência do STF, é correto afirmar que:',
+    alternativas: ['a vítima deve processar diretamente o policial que dirigia a viatura.', 'o Estado só indeniza se a vítima provar culpa do policial.', 'o Estado responde objetivamente, com direito de regresso contra o policial nos casos de dolo ou culpa.', 'o Estado não responde, pois o policial agia no estrito cumprimento do dever legal.', 'o Estado e o policial respondem solidariamente, de forma objetiva.'],
+    certa: 2,
+    comentario: 'Art. 37, § 6º, da CF: as pessoas jurídicas de direito público respondem pelos danos que seus agentes causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa. A responsabilidade do Estado é objetiva. O STF (Tema 940) fixou que a ação deve ser proposta contra o Estado, e não diretamente contra o agente.' },
+
+  { materia: 'Direito Administrativo',
+    enunciado: 'A Administração percebe que um ato administrativo seu, perfeitamente legal, deixou de ser conveniente e oportuno ao interesse público.\n\nNesse caso, a Administração poderá:',
+    alternativas: ['anulá-lo, com efeitos retroativos (ex tunc).', 'revogá-lo, com efeitos a partir de então (ex nunc), respeitados os direitos adquiridos.', 'apenas pedir ao Judiciário que o revogue.', 'revogá-lo, com efeitos retroativos (ex tunc).', 'convalidá-lo, para corrigir o vício de mérito.'],
+    certa: 1,
+    comentario: 'Súmula 473 do STF: a Administração pode anular seus atos ilegais e revogá-los por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos. A revogação atinge atos válidos e produz efeitos ex nunc. A anulação é para atos ilegais e retroage (ex tunc). O Judiciário não revoga atos de outro Poder.' },
+
+  { materia: 'Direito Administrativo',
+    enunciado: 'O comandante de um batalhão nomeia seu sobrinho, que não é concursado, para um cargo em comissão de assessoria na própria unidade que comanda.\n\nEssa nomeação:',
+    alternativas: ['é válida, pois cargo em comissão é de livre nomeação e exoneração.', 'é válida, pois sobrinho é parente de 4º grau, fora da vedação.', 'só seria inválida se o sobrinho não tivesse qualificação técnica.', 'é válida, pois o nepotismo só é proibido no Poder Judiciário.', 'viola a Constituição, conforme a Súmula Vinculante 13, por configurar nepotismo.'],
+    certa: 4,
+    comentario: 'A Súmula Vinculante 13 proíbe a nomeação de cônjuge, companheiro ou parente em linha reta, colateral ou por afinidade, até o 3º grau, inclusive, da autoridade nomeante para cargo em comissão. Sobrinho é parente colateral de 3º grau. A prática viola os princípios da impessoalidade e da moralidade e vale para todos os Poderes.' },
+
+  { materia: 'Direito Administrativo',
+    enunciado: 'Após as alterações feitas pela Lei 14.230/2021 na Lei de Improbidade Administrativa (Lei 8.429/1992), é correto afirmar que:',
+    alternativas: ['os atos que causam prejuízo ao erário podem ser punidos na modalidade culposa.', 'somente condutas dolosas configuram ato de improbidade administrativa.', 'a improbidade dispensa a análise de dolo ou culpa, por ser responsabilidade objetiva.', 'a mera ilegalidade, sem dolo, já caracteriza improbidade.', 'apenas os atos que geram enriquecimento ilícito exigem dolo.'],
+    certa: 1,
+    comentario: 'Com a Lei 14.230/2021, a Lei 8.429/1992 passou a exigir dolo para todas as modalidades de improbidade (enriquecimento ilícito, prejuízo ao erário e violação a princípios). A modalidade culposa, que antes existia para dano ao erário, deixou de existir, e a mera ilegalidade sem dolo não é improbidade.' }
+];
+
+/* ============ APP ============ */
+const LETRAS = ['A', 'B', 'C', 'D', 'E'];
+const $ = id => document.getElementById(id);
+const N = QUESTOES.length;
+let atual = -1, respostas = [], cortes = [];
+
+function tela(id) { document.querySelectorAll('.tela').forEach(t => t.classList.toggle('ativa', t.id === id)); window.scrollTo(0, 0); }
+function progresso() {
+  $('progresso').style.width = (atual < 0 ? 0 : Math.min(atual + 1, N) / N * 100) + '%';
+  $('contador').textContent = atual >= 0 && atual < N ? `Questão ${atual + 1} de ${N}` : '';
+}
+
+function mostrarQuestao() {
+  const q = QUESTOES[atual];
+  $('qMateria').textContent = q.materia;
+  $('qEnunciado').textContent = q.enunciado;
+  $('qAlternativas').innerHTML = '';
+  const cortadas = cortes[atual] || (cortes[atual] = new Set());
+  q.alternativas.forEach((a, i) => {
+    const linha = document.createElement('div');
+    linha.className = 'altlinha' + (cortadas.has(i) ? ' cortada' : '');
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'alt' + (respostas[atual] === i ? ' marcada' : '');
+    b.innerHTML = `<span class="letra">${LETRAS[i]}</span><span class="txt"></span>`;
+    b.lastChild.textContent = a;
+    b.onclick = () => { respostas[atual] = i; cortadas.delete(i); mostrarQuestao(); };
+    const t = document.createElement('button');
+    t.type = 'button';
+    t.className = 'tesoura';
+    t.title = cortadas.has(i) ? 'Desfazer corte' : 'Cortar esta alternativa';
+    t.setAttribute('aria-label', (cortadas.has(i) ? 'Desfazer corte da alternativa ' : 'Cortar a alternativa ') + LETRAS[i]);
+    t.textContent = '✂';
+    t.onclick = () => {
+      if (cortadas.has(i)) cortadas.delete(i); else { cortadas.add(i); if (respostas[atual] === i) respostas[atual] = undefined; }
+      mostrarQuestao();
+    };
+    linha.append(b, t);
+    $('qAlternativas').appendChild(linha);
+  });
+  $('btnVoltar').hidden = atual === 0;
+  $('btnAvancar').textContent = atual === N - 1 ? 'Finalizar' : 'Próxima';
+  $('btnAvancar').disabled = !Number.isInteger(respostas[atual]);
+  tela('tQuestao'); progresso();
+}
+
+$('btnComecar').onclick = () => { atual = 0; document.querySelector('.rodape').hidden = false; mostrarQuestao(); };
+
+$('btnVoltar').onclick = () => { if (atual > 0) { atual--; mostrarQuestao(); } };
+
+$('btnAvancar').onclick = () => {
+  if (atual < N - 1) { atual++; return mostrarQuestao(); }
+  if (atual === N - 1) {
+    atual = N; tela('tDados'); progresso();
+    $('btnVoltar').hidden = false;
+    $('btnAvancar').textContent = 'Ver minha nota'; $('btnAvancar').disabled = false;
+    $('nome').focus(); return;
+  }
+  if (atual === N) enviar();
+};
+$('formDados').onsubmit = e => { e.preventDefault(); enviar(); };
+
+// máscara (21) 99999-9999
+$('whatsapp').addEventListener('input', e => {
+  const d = e.target.value.replace(/\D/g, '').slice(0, 11);
+  e.target.value = d.length > 6 ? `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}`
+    : d.length > 2 ? `(${d.slice(0, 2)}) ${d.slice(2)}` : d.length ? `(${d}` : '';
+});
+
+function enviar() {
+  const nome = $('nome').value.trim(), whatsapp = $('whatsapp').value.trim();
+  const digitos = whatsapp.replace(/\D/g, '');
+  if (nome.length < 2) return $('erro').textContent = 'Informe seu nome.';
+  if (digitos.length < 10 || digitos.length > 11) return $('erro').textContent = 'Informe um WhatsApp com DDD.';
+  $('erro').textContent = '';
+  $('btnAvancar').disabled = true; $('btnAvancar').textContent = 'Corrigindo...';
+
+  const acertos = QUESTOES.reduce((s, q, i) => s + (respostas[i] === q.certa ? 1 : 0), 0);
+
+  // envia para a planilha (não trava a tela se falhar)
+  if (CONFIG.planilha.startsWith('https://')) {
+    const corpo = new URLSearchParams({ nome, whatsapp, nota: acertos, total: N,
+      respostas: respostas.map(r => LETRAS[r] || '-').join('') });
+    fetch(CONFIG.planilha, { method: 'POST', mode: 'no-cors', keepalive: true, body: corpo }).catch(() => {});
+  }
+  resultado(acertos, nome.split(/\s+/)[0]);
+}
+
+function resultado(acertos, primeiro) {
+  const pct = acertos / N;
+  $('rNota').innerHTML = `${acertos}<small>/${N}</small>`;
+  $('rFrase').textContent = pct >= .9 ? `Excelente, ${primeiro}!` : pct >= .6 ? `Bom começo, ${primeiro}!` : `Ainda dá tempo, ${primeiro}!`;
+  $('rMsg').textContent = pct >= .9
+    ? 'Você já tem uma boa base. Na prova da FGV as questões vêm mais elaboradas: o próximo passo é treinar no nível real da banca.'
+    : pct >= .6
+      ? 'Você acertou o básico, mas errou pontos que a FGV cobra com frequência. É exatamente aí que se ganha a vaga.'
+      : 'Essas são questões de base, e a prova da FGV vem mais difícil. Quem começa agora, com direção, chega na prova preparado.';
+  $('rCurso').href = CONFIG.destino;
+  document.querySelector('.rodape').hidden = true;
+  $('contador').textContent = 'Resultado';
+  $('progresso').style.width = '100%';
+
+  if (CONFIG.redirecionar) {
+    let s = CONFIG.segundos;
+    const tick = () => {
+      if (s <= 0) return location.href = CONFIG.destino;
+      $('rRedir').textContent = `Levando você para a Preparação PMERJ em ${s}s...`;
+      s--; setTimeout(tick, 1000);
+    };
+    tick();
+  } else {
+    $('rCorrecao').innerHTML = '';
+    QUESTOES.forEach((q, i) => {
+      const ok = respostas[i] === q.certa;
+      const d = document.createElement('div');
+      d.className = 'item';
+      d.innerHTML = `<div class="cab"><b>Questão ${i + 1} · ${q.materia}</b><span class="tag ${ok ? 'ok' : 'no'}">${ok ? 'Acertou' : 'Errou'}</span></div><div class="resp"></div><p></p>`;
+      d.querySelector('.resp').textContent = `Sua resposta: ${LETRAS[respostas[i]]} · Gabarito: ${LETRAS[q.certa]}`;
+      d.querySelector('p').textContent = q.comentario;
+      $('rCorrecao').appendChild(d);
+    });
+    $('blocoCorrecao').hidden = false;
+  }
+  tela('tResultado');
+}
+</script>
+</body>
+</html>
