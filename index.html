@@ -9,8 +9,9 @@
 <meta property="og:title" content="Minissimulado PMERJ · Prof. Ismael Souto">
 <meta property="og:description" content="10 questões no padrão FGV. Grátis. Descubra sua nota.">
 <meta property="og:image" content="https://preparatoriopmerj.institutosouto.com.br/img/og-pmerj.jpg">
+<link rel="icon" type="image/webp" href="/img/brasao-pmerj-240.webp">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="/img/hero-desktop.webp" fetchpriority="high">
+<link rel="preload" as="image" href="/img/brasao-pmerj-480.webp" imagesrcset="/img/brasao-pmerj-240.webp 240w, /img/brasao-pmerj-480.webp 480w" imagesizes="200px" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"></noscript>
@@ -44,9 +45,7 @@ main{flex:1;width:100%;max-width:660px;margin:0 auto;padding:24px 16px 40px}
 
 /* início */
 .inicio{text-align:center}
-.capa{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2);aspect-ratio:16/9;margin-bottom:22px;background:var(--card)}
-.capa img{width:100%;height:100%;object-fit:cover;object-position:70% 30%;display:block}
-.capa:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(6,18,48,.9))}
+.brasao{display:block;width:200px;height:auto;margin:6px auto 22px;filter:drop-shadow(0 18px 40px rgba(255,194,26,.22)) drop-shadow(0 0 60px rgba(47,123,255,.18))}
 .selo{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--ink);background:var(--card);border:1px solid var(--line2);padding:6px 12px;border-radius:30px}
 .selo i{width:7px;height:7px;border-radius:50%;background:var(--red2);box-shadow:0 0 0 4px rgba(255,45,58,.2)}
 h1{font-weight:800;font-size:clamp(34px,8vw,48px);line-height:1.04;letter-spacing:-.02em;margin:16px 0 12px}
@@ -113,7 +112,7 @@ h2{font-weight:800;font-size:22px;margin:28px 0 12px}
 .item .resp{color:var(--gray);font-size:13px;margin-bottom:6px}
 .item p{font-size:14.5px;line-height:1.55;color:#d6deee}
 [hidden]{display:none!important}
-@media (max-width:480px){main{padding-top:16px}h1{font-size:34px}.nota .num{font-size:84px}}
+@media (max-width:480px){main{padding-top:16px}.brasao{width:160px;margin-bottom:18px}h1{font-size:34px}.nota .num{font-size:84px}}
 </style>
 </head>
 <body>
@@ -127,7 +126,7 @@ h2{font-weight:800;font-size:22px;margin:28px 0 12px}
 <main>
   <!-- INÍCIO -->
   <section class="tela ativa inicio" id="tInicio">
-    <div class="capa"><img src="/img/hero-desktop.webp" decoding="async" alt="Prof. Ismael Souto e o brasão da PMERJ" width="1600" height="900" fetchpriority="high"></div>
+    <img class="brasao" src="/img/brasao-pmerj-480.webp" srcset="/img/brasao-pmerj-240.webp 240w, /img/brasao-pmerj-480.webp 480w" sizes="200px" alt="Brasão da PMERJ" width="480" height="576" fetchpriority="high" decoding="async">
     <span class="selo"><i></i>Grátis · 10 questões · Padrão FGV</span>
     <h1>Minissimulado <span>PMERJ</span></h1>
     <p class="lead">Teste seu nível em <b>Direito Penal</b> e <b>Direito Administrativo</b> com questões no estilo da FGV e descubra se você está pronto para a farda.</p>
