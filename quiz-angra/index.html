@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '828102750053261');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=828102750053261&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Última etapa — Aula GCM Angra dos Reis | Instituto Souto</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Lato:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Lato:wght@400;700;900&display=swap"></noscript>
+<style>
+:root{
+  --navy:#000000; --navy-2:#141019; --navy-deep:#000000; --card:#0f0f15; --card-2:#0b0c12;
+  --gold:#ffa21f; --gold-soft:rgba(255,162,31,.14);
+  --white:#f4f4f6; --muted:#a3a6b2; --muted-2:#8b8f9c;
+  --line:rgba(255,255,255,.12); --line-gold:rgba(255,162,31,.45);
+  --wa:#22c35e; --wa-d:#1aa34d;
+  --fdisp:'Montserrat',system-ui,sans-serif; --fbody:'Lato',system-ui,sans-serif;
+  --gut:clamp(18px,5vw,40px);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--navy);color:var(--white);font-family:var(--fbody);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:560px;margin-inline:auto;padding-inline:var(--gut)}
+
+/* ---- topo fixo: progresso ---- */
+.top{position:fixed;top:0;left:0;right:0;z-index:30;background:rgba(0,0,0,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{height:5px;background:rgba(255,255,255,.09)}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd45a,#ffa21f,#ff4a26,#e3161b);transition:width .4s cubic-bezier(.4,0,.2,1)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:52px}
+.top img{height:30px;width:auto}
+.count{font-family:var(--fdisp);font-weight:800;font-size:11.5px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.count b{color:var(--gold)}
+
+main{padding-top:57px;padding-bottom:40px}
+
+/* ---- pergunta ---- */
+.q{padding-top:clamp(26px,6vw,44px);animation:in .28s ease both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.tag{display:inline-block;font-family:var(--fdisp);font-weight:900;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);background:var(--gold-soft);border:1px solid var(--line-gold);padding:5px 10px;border-radius:3px;margin-bottom:14px}
+.q h1{margin:0 0 22px;font-family:var(--fdisp);font-weight:800;text-transform:uppercase;letter-spacing:-.015em;
+  font-size:clamp(19px,4.4vw,25px);line-height:1.2;text-wrap:balance}
+.opts{display:flex;flex-direction:column;gap:11px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;min-height:58px;padding:13px 15px;
+  font-family:var(--fbody);font-size:15.5px;font-weight:600;line-height:1.34;color:var(--white);
+  background:var(--card);border:1.5px solid var(--line);border-radius:10px;cursor:pointer;
+  transition:border-color .14s,background .14s,transform .1s}
+.opt:hover{border-color:var(--line-gold);background:var(--navy-2)}
+.opt:active,.opt.sel{border-color:var(--gold);background:rgba(255,162,31,.13);transform:scale(.995)}
+.opt .ltr{flex:0 0 30px;height:30px;display:grid;place-items:center;font-family:var(--fdisp);font-size:13px;font-weight:800;
+  color:var(--gold);background:var(--gold-soft);border:1px solid var(--line-gold);border-radius:7px}
+.opt:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ---- reveal ---- */
+#reveal{display:none;padding-top:clamp(30px,7vw,52px);text-align:center;animation:in .35s ease both}
+#reveal.show{display:block}
+.emoji{font-size:46px;line-height:1;margin-bottom:16px}
+#reveal h2{margin:0 0 14px;font-family:var(--fdisp);font-weight:800;text-transform:uppercase;letter-spacing:-.015em;
+  font-size:clamp(21px,4.6vw,27px);line-height:1.2}
+#reveal p{margin:0 auto 26px;font-size:16px;color:#d9d9e0;max-width:38ch;line-height:1.55}
+#reveal p b{color:var(--white)}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:66px;
+  font-family:var(--fdisp);font-size:17px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;
+  color:#fff;background:var(--wa);border-radius:12px;text-decoration:none;border:none;cursor:pointer;
+  box-shadow:0 14px 32px -8px rgba(34,195,94,.55);transition:transform .14s,background .14s}
+.btn-wa:hover{background:var(--wa-d);transform:translateY(-2px)}
+.btn-wa svg{width:25px;height:25px;fill:#fff;flex:0 0 25px}
+.auto{margin-top:14px;font-size:13px;color:var(--muted)}
+.auto b{color:var(--gold);font-variant-numeric:tabular-nums}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="bar"><span id="bar"></span></div>
+  <div class="wrap">
+    <img src="assets/emblem-angra.webp" alt="GCM Angra dos Reis" width="23" height="30">
+    <div class="count">Pergunta <b id="n">1</b> de 9</div>
+  </div>
+</header>
+
+<main><div class="wrap">
+  <div id="quiz"></div>
+
+  <div id="reveal">
+    <div class="emoji">🎯</div>
+    <h2>Prontinho! Seu plano de aprovação está pronto.</h2>
+    <p>Com base nas suas respostas, a <b>Aula Privada com o Prof. Ismael Souto</b> é o caminho certo pra você. Estamos preparando sua condição especial...</p>
+    <a class="btn-wa" id="grupo" href="#" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.045z"/></svg>
+      ENTRAR NO GRUPO DA AULA
+    </a>
+    <p class="auto" id="auto">Você entra automaticamente em <b id="seg">5</b>s</p>
+  </div>
+</div></main>
+
+<script>
+/* =========================================================
+   COLAR AQUI o link do grupo de WhatsApp (ou o redirect do devzapp)
+   ========================================================= */
+var GRUPO = "";   // COLAR o link do grupo da aula de Angra                 // ex: "https://chat.whatsapp.com/XXXXXXXX"
+var ENDPOINT = "https://script.google.com/macros/s/AKfycbzQ22gON779vv_ZNiC4OIml-ldfaTujK6cg_WlaW4ryb3FV7ZIabrLIgLVIJL2pxSGC/exec";              // ex: Apps Script /exec (salva as respostas)
+var EVENTO = "Aula GCM Angra";
+var QUIZ = "quiz-angra";        // define em qual planilha cai
+/* ========================================================= */
+
+var QUESTOES = [
+ {tag:"IDADE", q:"Qual a sua idade?",
+  o:["18 a 25 anos","26 a 30 anos","31 a 40 anos","Mais de 40 anos"]},
+ {tag:"SUA TENTATIVA", q:"Você já prestou concurso para Guarda Municipal antes?",
+  o:["Nunca prestei, esse vai ser o meu primeiro","Prestei uma vez e não passei na prova","Prestei mais de uma vez e não passei","Passei na prova e caí em outra etapa","Passei e fiquei sem ser chamado"]},
+ {tag:"DOR", q:"Qual dessas frases mais tem a ver com você hoje?",
+  o:["Não tenho tempo entre o trabalho e os estudos","Estudo, mas sinto que não sei estudar do jeito certo","Me perco na quantidade de matéria e não sei por onde começar","Sei o que preciso fazer, mas acabo procrastinando","Tenho medo de passar na prova e cair em outra etapa"]},
+ {tag:"USO DE IA", q:"Você já usa Inteligência Artificial (ChatGPT e afins) nos seus estudos?",
+  o:["Sim, já faz parte da minha rotina","Já usei algumas vezes, mas sem constância","Não uso, mas tenho curiosidade","Não uso e nunca tinha pensado nisso"]},
+ {tag:"URGÊNCIA", q:"Quando você quer estar dentro da GCM de Angra?",
+  o:["O quanto antes, quero passar já nesse primeiro concurso","Posso esperar um pouco","Só vou decidir quando sair o edital"]},
+ {tag:"DESEJO", q:"Por que passar na GCM de Angra é tão importante pra você?",
+  o:["Quero a estabilidade e a tranquilidade de um emprego garantido","Quero um salário melhor e mais qualidade de vida","Quero dar uma vida melhor pra minha família","Quero vestir a farda, é o que eu sempre quis","Quero provar, pra mim e pra todos, que sou capaz"]},
+ {tag:"RENDA FAMILIAR", q:"Qual a renda aproximada da sua família?",
+  o:["Até 2 mil","Entre 2 e 5 mil","Entre 5 e 8 mil","Entre 8 e 10 mil","Mais de 10 mil"]},
+ {tag:"INVESTIMENTO JÁ FEITO", q:"Quanto você já investiu na sua preparação para concursos (cursinho, materiais, mentorias)?",
+  o:["Nunca investi nada","Até R$ 1.000","De R$ 1.000 a R$ 3.000","De R$ 3.000 a R$ 5.000","Mais de R$ 5.000"]},
+ {tag:"FORMA DE PAGAMENTO", q:"Quando você investe em algo importante, como costuma pagar?",
+  o:["Cartão de crédito","Pix","Boleto","Não costumo investir"]}
+];
+
+/* Pixel: o PageView já disparou no topo.
+   Se o Lead NÃO saiu na página de captura, dispara aqui na 1ª etapa do quiz. */
+(function(){
+  var jaDisparou = false;
+  try{
+    var t = localStorage.getItem('angra_lead_px');
+    jaDisparou = !!t && (Date.now() - parseInt(t,10) < 30*60*1000); // vale por 30 min
+  }catch(e){}
+  if(!jaDisparou && window.fbq){
+    fbq('track','Lead',{content_name:'Aula GCM Angra (quiz)'});
+    try{ localStorage.setItem('angra_lead_px', String(Date.now())); }catch(e){}
+  }
+})();
+
+var LETRAS = "ABCDE";
+var idx = 0, respostas = [], travado = false;
+var elQuiz = document.getElementById('quiz'), elBar = document.getElementById('bar'), elN = document.getElementById('n');
+
+/* dados do lead vindos da captura (URL ou localStorage) */
+var LEAD = (function(){
+  var p = new URLSearchParams(location.search), d = {};
+  ['nome','email','whatsapp','utm_source','utm_medium','utm_campaign','utm_content','utm_term','v'].forEach(function(k){ d[k]=p.get(k)||''; });
+  if(!d.nome || !d.whatsapp){
+    try{ var ls=JSON.parse(localStorage.getItem('angra_lead')||localStorage.getItem('pmerj_lead')||'{}');
+      d.nome=d.nome||ls.n||''; d.whatsapp=d.whatsapp||ls.w||''; d.email=d.email||ls.e||''; d.v=d.v||ls.v||'';
+    }catch(e){}
+  }
+  return d;
+})();
+
+function esc(t){ var d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+
+function render(){
+  var Q = QUESTOES[idx], h = '<div class="q"><span class="tag">'+esc(Q.tag)+'</span><h1>'+esc(Q.q)+'</h1><div class="opts">';
+  for(var i=0;i<Q.o.length;i++){
+    h += '<button type="button" class="opt" data-i="'+i+'"><span class="ltr">'+LETRAS[i]+'</span><span>'+esc(Q.o[i])+'</span></button>';
+  }
+  elQuiz.innerHTML = h + '</div></div>';
+  elN.textContent = (idx+1);
+  elBar.style.width = (idx/QUESTOES.length*100)+'%';
+  travado = false;
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+/* auto-avanço no toque (sem botão de voltar) */
+elQuiz.addEventListener('click', function(e){
+  var b = e.target.closest('.opt');
+  if(!b || travado) return;
+  travado = true;
+  b.classList.add('sel');
+  respostas[idx] = QUESTOES[idx].o[+b.dataset.i];
+  setTimeout(function(){
+    if(idx >= QUESTOES.length-1){ finalizar(); }
+    else { idx++; render(); }
+  }, 190);
+});
+
+function finalizar(){
+  elBar.style.width = '100%';
+  elN.textContent = 9;
+  elQuiz.innerHTML = '';
+  document.getElementById('reveal').classList.add('show');
+  window.scrollTo({top:0,behavior:'instant'});
+
+  if(window.fbq) fbq('trackCustom','QuizConcluido');
+
+  /* salva as respostas (quando o endpoint estiver plugado) */
+  if(ENDPOINT){
+    try{
+      fetch(ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body: JSON.stringify({tipo:'quiz', s:QUIZ, nome:LEAD.nome, whatsapp:LEAD.whatsapp, email:LEAD.email,
+          evento:EVENTO, variante:LEAD.v||'', respostas:respostas,
+          utm_source:LEAD.utm_source, utm_medium:LEAD.utm_medium, utm_campaign:LEAD.utm_campaign, utm_content:LEAD.utm_content})});
+    }catch(x){}
+  }
+
+  /* redireciona sozinho em 5s; clicar antes cancela o contador */
+  var seg = 5, elSeg = document.getElementById('seg'), btn = document.getElementById('grupo');
+  if(GRUPO) btn.setAttribute('href', GRUPO);
+  var t = setInterval(function(){
+    seg--; if(elSeg) elSeg.textContent = seg;
+    if(seg <= 0){ clearInterval(t); if(GRUPO) location.href = GRUPO; }
+  }, 1000);
+  btn.addEventListener('click', function(){
+    clearInterval(t);
+    var a=document.getElementById('auto'); if(a) a.style.display='none';
+    if(window.fbq) fbq('track','CompleteRegistration',{content_name:'Grupo WhatsApp GCM Angra'});
+  });
+  if(!GRUPO){ var a=document.getElementById('auto'); if(a) a.textContent='(link do grupo ainda não configurado)'; }
+}
+
+render();
+</script>
+</body>
+</html>
