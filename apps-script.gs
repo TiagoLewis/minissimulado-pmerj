@@ -8,8 +8,8 @@
 const PLANILHAS = {
   pmerj: '1Z3ZiFKirWHvZ6PREbwf3VHUYUnww1GwPuMUBJmLWEt8',
   angra: '1TTVboxNMqGN-KyJDkG8cseDg83Vyh0-d74SoboRocAk',
-  'quiz-pmerj': '1n7g3cTS9uejB_ZEsaK_xHxpha97mym_e_vWWSfpdvUA',
-  'quiz-angra': '14HXfwahFyJUUwFxG1yZ-KZzoSHwX0QxH12ZfN5_tGnk'
+  'quiz-pmerj': '1h7gpfoe3jWDnKOqb3lkRiS5RLti_iL8ZrJrOt-a4BjM',
+  'quiz-angra': '1WeWHvfy5fJ7BSoZ6jjM0hgqClXFlqfuTbTb6lcQPa5I'
 };
 
 function doPost(e) {
