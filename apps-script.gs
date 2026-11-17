@@ -4,7 +4,6 @@
  * A URL /exec vai em CONFIG.planilha no index.html.
  */
 const PLANILHA_ID = '1drQFy6gVnMoqq6fh0EwBQ1buJDxcg5-Yj7EJcBL3LWI';
-const OURO = '#ffc21a';
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
@@ -16,8 +15,9 @@ function doPost(e) {
     const nota = Math.max(0, Math.min(10, Number(p.nota) || 0));
     sh.appendRow([new Date(), limpar(p.nome), limpar(p.whatsapp), nota]);
     const r = sh.getLastRow();
-    // barrinha dourada proporcional à nota
-    sh.getRange(r, 5).setFormula(`=SPARKLINE(D${r},{"charttype","bar";"max",10;"color1","${OURO}"})`);
+    sh.getRange(r, 1).setNumberFormat('dd/MM/yyyy HH:mm');
+    // barrinha proporcional à nota (texto, sem fórmula)
+    sh.getRange(r, 5).setValue('█'.repeat(nota) + '░'.repeat(10 - nota));
     return ContentService.createTextOutput('ok');
   } finally {
     lock.releaseLock();
