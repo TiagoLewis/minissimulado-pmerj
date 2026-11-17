@@ -9,18 +9,21 @@
 <meta property="og:title" content="Minissimulado PMERJ · Prof. Ismael Souto">
 <meta property="og:description" content="10 questões no padrão FGV. Grátis. Descubra sua nota.">
 <meta property="og:image" content="https://preparatoriopmerj.institutosouto.com.br/img/og-pmerj.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="https://preparatoriopmerj.institutosouto.com.br/img/hero-desktop.webp">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/img/hero-desktop.webp" fetchpriority="high">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"></noscript>
+<link rel="dns-prefetch" href="https://script.google.com">
 <style>
+@font-face{font-family:"Jakarta Fallback";src:local("Arial");size-adjust:104%;ascent-override:94%;descent-override:24%;line-gap-override:0%}
 :root{
   --bg:#061230; --navy:#0a1d45; --card:#0c1c40; --card2:#11244e;
   --ink:#f4f6fb; --gray:#a9b6d3; --dim:#7f8db0; --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
   --red:#e3161b; --red2:#ff2d3a; --gold:#ffc21a; --verde:#22c55e;
   --grad:linear-gradient(90deg,#fff 0%,#fff1c4 22%,#ffd45a 52%,#f2b320 78%,#e0a106 100%);
   --grad-btn:linear-gradient(100deg,#ffe58a 0%,#ffd04a 38%,#f2b320 72%,#d99a06 100%);
-  --font:"Plus Jakarta Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  --font:"Plus Jakarta Sans","Jakarta Fallback",Arial,system-ui,sans-serif;
   --r:18px;
 }
 *{box-sizing:border-box;margin:0}
@@ -124,7 +127,7 @@ h2{font-weight:800;font-size:22px;margin:28px 0 12px}
 <main>
   <!-- INÍCIO -->
   <section class="tela ativa inicio" id="tInicio">
-    <div class="capa"><img src="https://preparatoriopmerj.institutosouto.com.br/img/hero-desktop.webp" alt="Prof. Ismael Souto e o brasão da PMERJ" width="1600" height="900" fetchpriority="high"></div>
+    <div class="capa"><img src="/img/hero-desktop.webp" decoding="async" alt="Prof. Ismael Souto e o brasão da PMERJ" width="1600" height="900" fetchpriority="high"></div>
     <span class="selo"><i></i>Grátis · 10 questões · Padrão FGV</span>
     <h1>Minissimulado <span>PMERJ</span></h1>
     <p class="lead">Teste seu nível em <b>Direito Penal</b> e <b>Direito Administrativo</b> com questões no estilo da FGV e descubra se você está pronto para a farda.</p>
