@@ -3,7 +3,7 @@
  * Implantado como App da Web (Executar como: Eu | Acesso: Qualquer pessoa).
  * A URL /exec vai em CONFIG.planilha no index.html.
  */
-const PLANILHA_ID = '1drQFy6gVnMoqq6fh0EwBQ1buJDxcg5-Yj7EJcBL3LWI';
+const PLANILHA_ID = '1Z3ZiFKirWHvZ6PREbwf3VHUYUnww1GwPuMUBJmLWEt8';
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
