@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Minissimulado GCM Angra dos Reis · Prof. Ismael Souto</title>
-<meta name="description" content="10 questões de Legislação da Guarda, Português e Matemática no padrão IDIB. Descubra sua nota para a GCM de Angra dos Reis.">
+<meta name="description" content="10 questões de Legislação da Guarda, Português e Matemática no padrão IDIB. Correção ao vivo na live do Prof. Ismael Souto.">
 <meta name="theme-color" content="#000000">
 <meta property="og:title" content="Minissimulado GCM Angra dos Reis · Prof. Ismael Souto">
-<meta property="og:description" content="10 questões no padrão IDIB. Grátis. Descubra sua nota.">
+<meta property="og:description" content="10 questões no padrão IDIB. Grátis. Correção ao vivo na live.">
 <meta property="og:image" content="/img/brasao-gcm-angra-480.webp">
 <link rel="icon" type="image/webp" href="/img/brasao-gcm-angra-240.webp">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,8 +150,8 @@ h2{font-weight:800;font-size:22px;margin:28px 0 12px}
   <!-- DADOS -->
   <section class="tela" id="tDados">
     <span class="selo"><i></i>Última etapa</span>
-    <h1>Sua nota <span>está pronta</span></h1>
-    <p class="lead" style="margin:0">Informe seu nome e WhatsApp para ver quantas questões você acertou.</p>
+    <h1>Correção <span>ao vivo</span></h1>
+    <p class="lead" style="margin:0">A correção das 10 questões será feita na live com o Prof. Ismael Souto. Informe seu nome e WhatsApp para enviar suas respostas e receber o aviso da live.</p>
     <form id="formDados" novalidate>
       <label class="campo"><span>Nome</span><input id="nome" autocomplete="name" placeholder="Seu nome" required></label>
       <label class="campo"><span>WhatsApp com DDD</span><input id="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" maxlength="16" required></label>
@@ -162,8 +162,9 @@ h2{font-weight:800;font-size:22px;margin:28px 0 12px}
 
   <!-- RESULTADO -->
   <section class="tela" id="tResultado">
-    <div class="nota"><div class="rot">Sua nota</div><div class="num" id="rNota"></div><p id="rFrase"></p></div>
-    <div class="msg" id="rMsg"></div>
+    <span class="selo"><i></i>Revisão na live</span>
+    <h1 id="rFrase">Respostas <span>enviadas!</span></h1>
+    <div class="msg" id="rMsg" style="margin-top:18px">A revisão completa do minissimulado, com o gabarito e a explicação de cada questão, será feita <b>ao vivo na live</b> com o Prof. Ismael Souto. Você vai receber o aviso e o link no seu WhatsApp. Assista para conferir o gabarito e descobrir quantas você acertou.</div>
     <a class="btn" id="rCurso" href="#">Conhecer a Preparação GCM Angra →</a>
     <p class="redir" id="rRedir"></p>
     <div id="blocoCorrecao" hidden>
@@ -188,7 +189,9 @@ const CONFIG = {
   // true = mostra a nota e redireciona sozinho depois de X segundos
   // false = mostra a nota + correção comentada e só vai pro site pelo botão
   redirecionar: false,
-  segundos: 6
+  segundos: 6,
+  // false = não mostra nota nem gabarito na tela (a revisão é feita na live)
+  mostrarCorrecao: false
 };
 
 /* ============ QUESTÕES ============ */
@@ -309,7 +312,7 @@ $('btnAvancar').onclick = () => {
   if (atual === N - 1) {
     atual = N; tela('tDados'); progresso();
     $('btnVoltar').hidden = false;
-    $('btnAvancar').textContent = 'Ver minha nota'; $('btnAvancar').disabled = false;
+    $('btnAvancar').textContent = 'Enviar minhas respostas'; $('btnAvancar').disabled = false;
     $('nome').focus(); return;
   }
   if (atual === N) enviar();
@@ -329,7 +332,7 @@ function enviar() {
   if (nome.length < 2) return $('erro').textContent = 'Informe seu nome.';
   if (digitos.length < 10 || digitos.length > 11) return $('erro').textContent = 'Informe um WhatsApp com DDD.';
   $('erro').textContent = '';
-  $('btnAvancar').disabled = true; $('btnAvancar').textContent = 'Corrigindo...';
+  $('btnAvancar').disabled = true; $('btnAvancar').textContent = 'Enviando...';
 
   const acertos = QUESTOES.reduce((s, q, i) => s + (respostas[i] === q.certa ? 1 : 0), 0);
 
@@ -343,14 +346,9 @@ function enviar() {
 }
 
 function resultado(acertos, primeiro) {
-  const pct = acertos / N;
-  $('rNota').innerHTML = `${acertos}<small>/${N}</small>`;
-  $('rFrase').textContent = pct >= .9 ? `Excelente, ${primeiro}!` : pct >= .6 ? `Bom começo, ${primeiro}!` : `Ainda dá tempo, ${primeiro}!`;
-  $('rMsg').textContent = pct >= .9
-    ? 'Você já tem uma boa base. Na prova da IDIB as questões vêm mais elaboradas: o próximo passo é treinar no nível real da banca.'
-    : pct >= .6
-      ? 'Você acertou o básico, mas errou pontos que a IDIB cobra com frequência. É exatamente aí que se ganha a vaga.'
-      : 'Essas são questões de base, e a prova da IDIB vem mais difícil. Quem começa agora, com direção, chega na prova preparado.';
+  // A nota vai só para a planilha; na tela, o aviso de que a revisão será na live.
+  $('rFrase').innerHTML = 'Respostas <span>enviadas!</span>';
+  $('rFrase').firstChild.textContent = `Pronto, ${primeiro}! Respostas `;
   $('rCurso').href = CONFIG.destino;
   document.querySelector('.rodape').hidden = true;
   $('contador').textContent = 'Resultado';
@@ -364,7 +362,7 @@ function resultado(acertos, primeiro) {
       s--; setTimeout(tick, 1000);
     };
     tick();
-  } else {
+  } else if (CONFIG.mostrarCorrecao) {
     $('rCorrecao').innerHTML = '';
     QUESTOES.forEach((q, i) => {
       const ok = respostas[i] === q.certa;
