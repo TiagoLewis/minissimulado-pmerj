@@ -9,5 +9,8 @@ h = h.replace(/\$\('aula(Titulo|Data)'\)\.textContent\s*=/g, 'void ');
 // texto de abertura e botão
 h = h.replace(/<p>(?:Você já está na turma! Agora r|R)esponda <b>8 perguntas rápidas<\/b>[\s\S]*?<\/p>/, '<p>Você já está na turma! Agora responda <b>8 perguntas rápidas</b> (menos de 1 minuto) para eu conhecer a sua rotina. Com as suas respostas, eu preparo o melhor caminho para você até a prova.</p>');
 h = h.replace(/(<button type="button" class="btn" id="comecar">)[^<]*/, '$1Responder agora! ');
+// vagas: 450
+h = h.replace(/(<small>Vagas<\/small>\s*<strong>)\s*200\s*(<\/strong>)/i, '$1450$2');
+h = h.replace(/\b200 vagas\b/g, '450 vagas');
 if (!h.includes('3 aulas especiais gratuitas')) { console.error('card da aula não encontrado'); process.exit(1); }
 fs.writeFileSync(f,h);console.log('edited',h.length);
