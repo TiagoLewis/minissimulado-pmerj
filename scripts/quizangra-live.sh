@@ -6,5 +6,5 @@ mkdir -p out/img
 curl -fsSL "$U/" -o out/index.html
 curl -fsSL "$U/img/brasao-angra.webp" -o out/img/brasao-angra.webp
 curl -fsSL "$U/img/ismael.webp" -o out/img/ismael.webp
-node scripts/quizangra-edit.js
+node "$(dirname "$0")/quizangra-edit.js"
 grep -q 'aulaTitulo' out/index.html
