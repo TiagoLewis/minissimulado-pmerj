@@ -1,19 +1,10 @@
+// Ajustes aplicados sobre a página no ar (quizangra.institutosouto.com.br).
+// Idempotente: pode rodar várias vezes sobre a versão já editada.
 const fs=require('fs');const f='out/index.html';let h=fs.readFileSync(f,'utf8');
-const R=(a,b)=>{if(h.includes(a))h=h.replace(a,b)};
-R('var AULA_FIXA = "2026-12-01";','var AULA_FIXA = "2026-11-24";');
-R('<strong id="aulaTitulo">Como gabaritar a IDIB em 60 dias</strong>','<strong id="aulaTitulo">Hoje, às 20h (horário de Brasília)</strong>');
-R('<span id="aulaData">Terça-feira, às 20h (horário de Brasília)</span>','<span id="aulaData">Inscrições até 21/12 · prova em 24/01/2027</span>');
-R("$('aulaData').textContent = AULA_TXT.charAt(0).toUpperCase() + AULA_TXT.slice(1) + ' (horário de Brasília)';","var HOJE = (function(){ var a = new Date(Date.now() - 3*3600*1000); return pad(a.getUTCDate())+'/'+pad(a.getUTCMonth()+1); })();\n$('aulaTitulo').textContent = (AULA.data === HOJE ? 'Hoje, às ' + AULA_HORA + 'h' : AULA_TXT.charAt(0).toUpperCase() + AULA_TXT.slice(1)) + ' (horário de Brasília)';");
-R('<strong id="aulaTitulo">Hoje, às 20h (horário de Brasília)</strong>','<strong id="aulaTitulo">Simulado de Direito Penal, Processo Penal e Leis Penais Especiais</strong>');
-R('<span id="aulaData">Inscrições até 21/12 · prova em 24/01/2027</span>','<span id="aulaData">Hoje, às 20h (horário de Brasília)</span><span style="display:block;margin-top:4px;font-size:.88em;opacity:.72">Inscrições até 21/12 · prova em 24/01/2027</span>');
-R("$('aulaTitulo').textContent = (AULA.data === HOJE","$('aulaData').textContent = (AULA.data === HOJE");
-R('<strong id="aulaTitulo">Simulado de Direito Penal, Processo Penal e Leis Penais Especiais</strong>','<strong id="aulaTitulo">Como ser aprovado na Guarda Municipal de Angra dos Reis</strong>');
-R('<span id="aulaData">Hoje, às 20h (horário de Brasília)</span>','<span id="aulaData">Terça-feira, às 20h (horário de Brasília)</span>');
-R("$('aulaData').textContent = (AULA.data === HOJE","void (AULA.data === HOJE");
-R('<strong id="aulaTitulo">Simulado de Direito Penal, Processo Penal e Leis Penais Especiais</strong>','<strong id="aulaTitulo">Como ser aprovado na Guarda Municipal de Angra dos Reis</strong>');
-R('<span id="aulaData">Hoje, às 20h (horário de Brasília)</span>','<span id="aulaData">Terça-feira, às 20h (horário de Brasília)</span>');
-R("$('aulaData').textContent = (AULA.data === HOJE","void (AULA.data === HOJE");
-R('<strong id="aulaTitulo">Simulado de Direito Penal, Processo Penal e Leis Penais Especiais</strong>','<strong id="aulaTitulo">Como ser aprovado na Guarda Municipal de Angra dos Reis</strong>');
-R('<span id="aulaData">Hoje, às 20h (horário de Brasília)</span>','<span id="aulaData">Terça-feira, às 20h (horário de Brasília)</span>');
-R("$('aulaData').textContent = (AULA.data === HOJE","var _aulaTxt = (AULA.data === HOJE");
+const AULA_HTML = '<div class="aula">\n      <small><i></i> Aula especial gratuita</small>\n      <strong id="aulaTitulo">Como ser aprovado na Guarda Municipal de Angra dos Reis</strong>\n      <span id="aulaData">Terça-feira, às 20h (horário de Brasília)</span><span style="display:block;margin-top:4px;font-size:.88em;opacity:.72">Inscrições até 21/12 · prova em 24/01/2027</span>\n    </div>';
+h = h.replace(/<div class="aula">[\s\S]*?<\/div>/, AULA_HTML);
+h = h.replace('var AULA_FIXA = "2026-12-01";','var AULA_FIXA = "2026-11-24";');
+// o texto do card é fixo: impede o script da página de sobrescrever título/data
+h = h.replace(/\$\('aula(Titulo|Data)'\)\.textContent\s*=/g, 'void ');
+if (!h.includes('Como ser aprovado na Guarda Municipal de Angra dos Reis')) { console.error('card da aula não encontrado'); process.exit(1); }
 fs.writeFileSync(f,h);console.log('edited',h.length);
