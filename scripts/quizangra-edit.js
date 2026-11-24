@@ -4,4 +4,7 @@ R('var AULA_FIXA = "2026-12-01";','var AULA_FIXA = "2026-11-24";');
 R('<strong id="aulaTitulo">Como gabaritar a IDIB em 60 dias</strong>','<strong id="aulaTitulo">Hoje, às 20h (horário de Brasília)</strong>');
 R('<span id="aulaData">Terça-feira, às 20h (horário de Brasília)</span>','<span id="aulaData">Inscrições até 21/12 · prova em 24/01/2027</span>');
 R("$('aulaData').textContent = AULA_TXT.charAt(0).toUpperCase() + AULA_TXT.slice(1) + ' (horário de Brasília)';","var HOJE = (function(){ var a = new Date(Date.now() - 3*3600*1000); return pad(a.getUTCDate())+'/'+pad(a.getUTCMonth()+1); })();\n$('aulaTitulo').textContent = (AULA.data === HOJE ? 'Hoje, às ' + AULA_HORA + 'h' : AULA_TXT.charAt(0).toUpperCase() + AULA_TXT.slice(1)) + ' (horário de Brasília)';");
+R('<strong id="aulaTitulo">Hoje, às 20h (horário de Brasília)</strong>','<strong id="aulaTitulo">Simulado de Direito Penal, Processo Penal e Leis Penais Especiais</strong>');
+R('<span id="aulaData">Inscrições até 21/12 · prova em 24/01/2027</span>','<span id="aulaData">Hoje, às 20h (horário de Brasília)</span><span style="display:block;margin-top:4px;font-size:.88em;opacity:.72">Inscrições até 21/12 · prova em 24/01/2027</span>');
+R("$('aulaTitulo').textContent = (AULA.data === HOJE","$('aulaData').textContent = (AULA.data === HOJE");
 fs.writeFileSync(f,h);console.log('edited',h.length);
