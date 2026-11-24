@@ -1,8 +1,18 @@
 // Ajustes aplicados sobre a página no ar (quizangra.institutosouto.com.br).
 // Idempotente: pode rodar várias vezes sobre a versão já editada.
 const fs=require('fs');const f='out/index.html';let h=fs.readFileSync(f,'utf8');
-const AULA_HTML = '<div class="aula">\n      <small><i></i> 3 aulas especiais gratuitas</small>\n      <ol style="list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px"><li style="display:flex;gap:10px;align-items:baseline"><b style="flex:none;color:#ffc21a;font-size:.85em">1ª AULA</b><strong id="aulaTitulo" style="margin:0">Como ser aprovado na Guarda Municipal de Angra dos Reis</strong></li><li style="display:flex;gap:10px;align-items:baseline"><b style="flex:none;color:#ffc21a;font-size:.85em">2ª AULA</b><strong style="margin:0">Simulado de Direito Penal, Processo Penal e Leis Penais Especiais</strong></li><li style="display:flex;gap:10px;align-items:baseline"><b style="flex:none;color:#ffc21a;font-size:.85em">3ª AULA</b><strong style="margin:0">Plano de estudos para a GCM Angra dos Reis</strong></li></ol><span id="aulaData" hidden></span>\n    </div>';
-h = h.replace(/<div class="aula">[\s\S]*?<\/div>/, AULA_HTML);
+const AULAS = [
+  'Como ser aprovado na Guarda Municipal de Angra dos Reis',
+  'Simulado de Direito Penal, Processo Penal e Leis Penais Especiais',
+  'Plano de estudos para a GCM Angra dos Reis'
+];
+const AULA_HTML = '<!--AULAS--><div class="aulas-3">'
+  + '<p style="margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ffc21a">3 aulas especiais gratuitas</p>'
+  + AULAS.map((t,i)=>'<div class="aula"'+(i?' style="margin-top:10px"':'')+'><small><i></i> '+(i+1)+'ª aula</small><strong'+(i?'':' id="aulaTitulo"')+'>'+t+'</strong></div>').join('')
+  + '<span id="aulaData" hidden></span></div><!--/AULAS-->';
+h = h.replace(/<!--AULAS-->[\s\S]*?<!--\/AULAS-->|<div class="aula">[\s\S]*?<\/div>/, AULA_HTML);
+// vagas: 450
+h = h.replace(/(<small>Vagas<\/small><strong>)\s*\d+\s*(<\/strong>)/i, '$1450$2');
 h = h.replace('var AULA_FIXA = "2026-12-01";','var AULA_FIXA = "2026-11-24";');
 // o texto do card é fixo: impede o script da página de sobrescrever título/data
 h = h.replace(/\$\('aula(Titulo|Data)'\)\.textContent\s*=/g, 'void ');
