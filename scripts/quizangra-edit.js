@@ -10,4 +10,7 @@ R("$('aulaTitulo').textContent = (AULA.data === HOJE","$('aulaData').textContent
 R('<strong id="aulaTitulo">Simulado de Direito Penal, Processo Penal e Leis Penais Especiais</strong>','<strong id="aulaTitulo">Como ser aprovado na Guarda Municipal de Angra dos Reis</strong>');
 R('<span id="aulaData">Hoje, às 20h (horário de Brasília)</span>','<span id="aulaData">Terça-feira, às 20h (horário de Brasília)</span>');
 R("$('aulaData').textContent = (AULA.data === HOJE","void (AULA.data === HOJE");
+R('<strong id="aulaTitulo">Simulado de Direito Penal, Processo Penal e Leis Penais Especiais</strong>','<strong id="aulaTitulo">Como ser aprovado na Guarda Municipal de Angra dos Reis</strong>');
+R('<span id="aulaData">Hoje, às 20h (horário de Brasília)</span>','<span id="aulaData">Terça-feira, às 20h (horário de Brasília)</span>');
+R("$('aulaData').textContent = (AULA.data === HOJE","void (AULA.data === HOJE");
 fs.writeFileSync(f,h);console.log('edited',h.length);
