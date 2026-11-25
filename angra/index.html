@@ -151,9 +151,10 @@ h2{font-weight:800;font-size:22px;margin:28px 0 12px}
   <section class="tela" id="tDados">
     <span class="selo"><i></i>Última etapa</span>
     <h1>Correção <span>ao vivo</span></h1>
-    <p class="lead" style="margin:0">A correção das 10 questões será feita na live com o Prof. Ismael Souto. Informe seu nome e WhatsApp para enviar suas respostas e receber o aviso da live.</p>
+    <p class="lead" style="margin:0">A correção das 10 questões será feita na live com o Prof. Ismael Souto. Informe seu nome, e-mail e WhatsApp para enviar suas respostas e receber o aviso da live.</p>
     <form id="formDados" novalidate>
       <label class="campo"><span>Nome</span><input id="nome" autocomplete="name" placeholder="Seu nome" required></label>
+      <label class="campo"><span>E-mail</span><input id="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" placeholder="seuemail@exemplo.com" maxlength="120" required></label>
       <label class="campo"><span>WhatsApp com DDD</span><input id="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(21) 99999-9999" maxlength="16" required></label>
       <div class="erro" id="erro"></div>
       <p class="seguro">🔒 Seus dados ficam só com o Instituto Souto.</p>
@@ -327,9 +328,10 @@ $('whatsapp').addEventListener('input', e => {
 });
 
 function enviar() {
-  const nome = $('nome').value.trim(), whatsapp = $('whatsapp').value.trim();
+  const nome = $('nome').value.trim(), email = $('email').value.trim().toLowerCase(), whatsapp = $('whatsapp').value.trim();
   const digitos = whatsapp.replace(/\D/g, '');
   if (nome.length < 2) return $('erro').textContent = 'Informe seu nome.';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return $('erro').textContent = 'Informe um e-mail válido.';
   if (digitos.length < 10 || digitos.length > 11) return $('erro').textContent = 'Informe um WhatsApp com DDD.';
   $('erro').textContent = '';
   $('btnAvancar').disabled = true; $('btnAvancar').textContent = 'Enviando...';
@@ -338,7 +340,7 @@ function enviar() {
 
   // envia para a planilha (não trava a tela se falhar)
   if (CONFIG.planilha.startsWith('https://')) {
-    const corpo = new URLSearchParams({ s: 'angra', nome, whatsapp, nota: acertos, total: N,
+    const corpo = new URLSearchParams({ s: 'angra', nome, email, whatsapp, nota: acertos, total: N,
       respostas: respostas.map(r => LETRAS[r] || '-').join('') });
     fetch(CONFIG.planilha, { method: 'POST', mode: 'no-cors', keepalive: true, body: corpo }).catch(() => {});
   }

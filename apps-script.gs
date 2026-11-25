@@ -35,6 +35,11 @@ function salvarMinissimulado(p) {
   const r = sh.getLastRow();
   sh.getRange(r, 1).setNumberFormat('dd/MM/yyyy HH:mm');
   sh.getRange(r, 5).setValue('█'.repeat(nota) + '░'.repeat(10 - nota)); // barrinha da nota
+  // e-mail na coluna F (fica depois da barrinha para não desalinhar as linhas antigas)
+  if (p.email) {
+    if (!sh.getRange(1, 6).getValue()) sh.getRange(1, 6).setValue('E-mail');
+    sh.getRange(r, 6).setValue(limpar(p.email));
+  }
   return ContentService.createTextOutput('ok');
 }
 
